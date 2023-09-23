@@ -1,0 +1,25 @@
+.PageLoader {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .CanRefresh {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 64px;
+
+    p {
+      font-size: 14px;
+      color: var(--typography-light-gray);
+    }
+
+    span {
+      font-size: 14px;
+      color: var(--typography-light-gray);
+    }
+  }
+}

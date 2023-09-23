@@ -1,0 +1,26 @@
+.InputSlider {
+
+  .Thumb {
+    width: 32px;
+    height: 32px;
+    background: var(--radio-group-background);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -12px;
+
+    color: var(--typography-light-gray);
+
+    &:last-child {
+      margin-right: 20px;
+    }
+  }
+
+  .Track {
+    background: var(--typography-purple);
+    height: 5px;
+  }
+}

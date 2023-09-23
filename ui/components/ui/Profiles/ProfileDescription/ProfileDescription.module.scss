@@ -1,0 +1,16 @@
+.ProfileDescription {
+  margin: 20px;
+
+  p {
+    margin: 0;
+    font-family: var(--font-assistant);
+    font-size: 14px;
+    line-height: 1.43;
+    color: var(--typography-light-gray);
+    word-break: break-word;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

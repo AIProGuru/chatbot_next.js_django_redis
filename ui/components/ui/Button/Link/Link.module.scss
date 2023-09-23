@@ -1,0 +1,26 @@
+.Link {
+  text-decoration: none;
+}
+
+.LinkStyled {
+  font-size: 16px;
+  color: var(--typography-light-gray);
+  text-decoration: underline;
+}
+
+.Variant {
+  &-signin {
+    color: var(--typography-darkest-gray);
+    font-size: 14px;
+  }
+
+  &-agreement {
+    color: var(--typography-light-gray);
+    font-size: 15px;
+  }
+
+  &-purple {
+    color: var(--typography-purple);
+    font-size: 14px;
+  }
+}

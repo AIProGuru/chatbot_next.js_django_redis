@@ -1,0 +1,14 @@
+.Modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--body-background);
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  padding: 0 20px;
+  z-index: 1001;
+  overflow-y: auto;
+}

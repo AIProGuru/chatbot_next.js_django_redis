@@ -1,0 +1,78 @@
+@import "styles/mixins";
+
+.SuccessPageContainer {
+  .SuccessPage {
+    margin: 0 20px;
+
+    .GoBack {
+      padding-top: 20px;
+    }
+
+    .WelcomeLogotype {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 35px 0 40px 0;
+
+      div {
+        &:first-child {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    .SuccessRabbitContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 16px;
+        margin: 10px 0;
+        font-family: var(--font-heebo);
+        color: var(--typography-dark-gray);
+        text-align: center;
+      }
+
+      p:last-child {
+        margin-bottom: 30px;
+      }
+    }
+
+    .Actions {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+
+      .Button {
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
+      }
+
+      p.SubmitButtonText {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--typography-light-gray);
+        text-align: center;
+        margin: 9.75px 0;
+      }
+
+      p.ButtonGoAuth {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--typography-purple);
+        text-align: center;
+        margin: 6.25px 0;
+      }
+
+      p.SubmitButtonText, p.ButtonGoAuth {
+        //margin: 10px 0;
+      }
+    }
+
+
+  }
+}

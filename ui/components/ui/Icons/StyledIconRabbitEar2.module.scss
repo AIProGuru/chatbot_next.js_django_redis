@@ -1,0 +1,14 @@
+.StyledIconRabbitEar2 {
+  --w: 70px;
+  --h: 95px;
+
+  display: inline-block;
+
+  width: var(--w);
+  height: var(--h);
+
+  background-image: url('assets/styledRabbit2.svg');
+  background-size: 70px 110px;
+  background-repeat: no-repeat;
+  //background-position: top 5px;
+}

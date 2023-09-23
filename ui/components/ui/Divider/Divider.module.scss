@@ -1,0 +1,19 @@
+.Divider {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  background: var(--divider-color);
+}
+
+.Color {
+  &-white {
+    background: var(--divider-color-light);
+  }
+}
+
+.Variant {
+  &-big {
+    height: 5px;
+  }
+}

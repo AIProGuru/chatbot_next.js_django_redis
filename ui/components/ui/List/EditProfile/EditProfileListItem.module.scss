@@ -1,0 +1,62 @@
+.EditProfileListItem {
+  width: 100%;
+  //border-bottom: 1px solid var(--divider-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+  &:not(:first-child) {
+    border-top: 1px solid var(--divider-color);
+  }
+
+  .Title {
+    padding: 20px 0;
+
+    font-size: 16px;
+    color: var(--typography-light-gray);
+  }
+
+  .Other {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .Value {
+      margin-right: 16px;
+
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--typography-light-gray);
+
+      img {
+        width: 37px;
+        height: 37px;
+        object-fit: cover;
+        border-radius: 100px;
+
+        &[src=''] {
+          display: none;
+        }
+      }
+    }
+
+    .Icon {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.rtl {
+  .Other {
+    .Value {
+      margin-right: unset;
+      margin-left: 16px;
+    }
+
+    .Icon {
+      transform: rotate(90deg);
+    }
+  }
+}

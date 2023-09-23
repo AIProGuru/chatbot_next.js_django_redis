@@ -1,0 +1,17 @@
+.SuccessRabbitIcon {
+  display: inline-block;
+
+  width: 259px;
+  height: 241px;
+
+  background-image: url('assets/successRabbit.svg');
+  background-repeat: no-repeat;
+}
+
+.Size {
+  &-small {
+    width: 195px;
+    height: 182px;
+    background-size: 195px 182px;
+  }
+}

@@ -1,0 +1,37 @@
+.AvailableTodayBlock {
+  //padding: 20px;
+
+  .Description {
+    font-size: 14px;
+    color: var(--typography-light-gray);
+    margin: 0 20px;
+    margin-bottom: 7px;
+    word-break: break-word;
+    width: calc(90% - 10px);
+  }
+
+  .Title {
+    font-size: 18px;
+    color: var(--typography-light-gray);
+    margin: 0 20px;
+    font-weight: 800;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    word-break: break-word;
+    width: calc(90% - 10px);
+  }
+
+  .SuitsUs {
+    font-size: 13px;
+    color: var(--typography-pink);
+    margin: 0 20px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    word-break: break-word;
+    width: calc(90% - 10px);
+
+    span {
+      font-weight: 700;
+    }
+  }
+}

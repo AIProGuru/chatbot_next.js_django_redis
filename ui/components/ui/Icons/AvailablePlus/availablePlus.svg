@@ -1,0 +1,8 @@
+<svg width="27" height="27" viewBox="0 0 27 27" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(1.259 1.256)" stroke="#BEBEBE" fill="none" fill-rule="evenodd">
+        <circle cx="12.244" cy="12.244" r="12.244"/>
+        <g stroke-linecap="round">
+            <path d="M5.915 12.244h12.659M12.245 5.915v12.659"/>
+        </g>
+    </g>
+</svg>

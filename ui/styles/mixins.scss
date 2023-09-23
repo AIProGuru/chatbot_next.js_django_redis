@@ -1,0 +1,311 @@
+@mixin bp-min($width) {
+  @media screen and (min-width: $width) {
+    @content
+  }
+}
+
+@mixin bp-max($width) {
+  @media screen and (max-width: $width) {
+    @content
+  }
+}
+
+@mixin orientation($o) {
+  @media (orientation: $o) {
+    @content
+  }
+}
+
+@mixin margins() {
+  .mt {
+    @for $i from 0 through 256 {
+      &-#{$i} {
+        margin-top: $i + px;
+      }
+    }
+  }
+
+  .mr {
+    @for $i from 0 through 256 {
+      &-#{$i} {
+        margin-right: $i + px;
+      }
+    }
+  }
+
+  .mb {
+    @for $i from 0 through 256 {
+      &-#{$i} {
+        margin-bottom: $i + px;
+      }
+    }
+  }
+
+  .ml {
+    @for $i from 0 through 256 {
+      &-#{$i} {
+        margin-left: $i + px;
+      }
+    }
+  }
+}
+
+@mixin paddings() {
+  .pt {
+    @for $i from 0 through 256 {
+      &-#{$i} {
+        padding-top: $i + px;
+      }
+    }
+  }
+
+  .pr {
+    @for $i from 0 through 256 {
+      &-#{$i} {
+        padding-right: $i + px;
+      }
+    }
+  }
+
+  .pb {
+    @for $i from 0 through 256 {
+      &-#{$i} {
+        padding-bottom: $i + px;
+      }
+    }
+  }
+
+  .pl {
+    @for $i from 0 through 256 {
+      &-#{$i} {
+        padding-left: $i + px;
+      }
+    }
+  }
+}
+
+@mixin fontSizes() {
+  .fontSize {
+    @for $i from 0 through 256 {
+      &-#{$i} {
+        font-size: $i + px;
+      }
+    }
+  }
+}
+
+@mixin fontWeights() {
+  .fontWeight {
+    &-bold {
+      font-weight: 700;
+    }
+
+    &-normal {
+      font-weight: 400;
+    }
+
+    &-medium {
+      font-weight: 500;
+    }
+  }
+}
+
+@mixin fontFamilies() {
+  .fontFamily {
+    &-default {
+      font-family: sans-serif !important;
+      font-family: var(--font-heebo) !important;
+    }
+
+    &-assistant {
+      font-family: sans-serif !important;
+      font-family: var(--font-assistant) !important;
+    }
+  }
+}
+
+@mixin lineHeight() {
+  .lineHeight {
+    @for $i from 0 through 1024 {
+      &-#{$i} {
+        line-height: calc(#{$i} / 100);
+      }
+    }
+  }
+}
+
+@mixin textAlign() {
+  .textAlign {
+    &-center {
+      text-align: center;
+    }
+
+    &-left {
+      text-align: left;
+    }
+
+    &-right {
+      text-align: right;
+    }
+
+    &-default {
+      text-align: unset;
+    }
+  }
+}
+
+@mixin buttonReset() {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  background: unset;
+  border-radius: unset;
+  outline: none;
+  border: unset;
+}
+
+@mixin inputReset() {
+  @include buttonReset;
+}
+
+@mixin colors() {
+  .color {
+    &-light-gray {
+      color: var(--typography-light-gray) !important;
+    }
+
+    &-dark-gray {
+      color: var(--typography-dark-gray) !important;
+    }
+
+    &-purple {
+      color: var(--typography-purple) !important;
+    }
+  }
+}
+
+@mixin inputRadio() {
+  input[type='radio'] {
+    --active-inner: var(--radio-input-active);
+
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    outline: none;
+
+    border: 1px solid var(--radio-input-border);
+    border-radius: 50%;
+
+    width: 22px;
+    height: 22px;
+
+    &:checked {
+      --o: 1;
+      border: 2px solid var(--active-inner);
+    }
+
+    &:after {
+      content: "";
+      display: block;
+
+      position: absolute;
+      left: 50%;
+      top: 49%;
+      transform: translate(-50%, -50%);
+
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--active-inner);
+      opacity: var(--o, 0);
+    }
+  }
+}
+
+@mixin fullSizeButtonText($variant) {
+  @if $variant == 'default' {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--typography-light-gray);
+    text-align: center;
+    margin: 7px 0;
+  }
+
+  @if $variant == 'outline' {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--typography-purple);
+    text-align: center;
+    margin: 7px 0;
+  }
+}
+
+@mixin SignUpProfileDefaults() {
+  .GoBack {
+    padding-top: 20px;
+  }
+
+  .WelcomeLogotype {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 35px 0;
+
+    div {
+      &:first-child {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+@mixin DrawerShadow() {
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    top: 48px;
+    z-index: 10;
+    display: block;
+
+    width: 100%;
+    height: 100px;
+
+    background: var(--shadow-top);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: calc(100% - 100px);
+    z-index: 0;
+    display: block;
+
+    width: 100%;
+    height: 100px;
+
+    background: var(--shadow-bottom);
+  }
+}
+
+@mixin showScrollbar() {
+  &::-webkit-scrollbar {
+    display: unset;
+  }
+
+  -ms-overflow-style: unset; /* IE and Edge */
+  scrollbar-width: unset; /* Firefox */
+
+  & div {
+    &::-webkit-scrollbar {
+      display: unset;
+    }
+
+    -ms-overflow-style: unset; /* IE and Edge */
+    scrollbar-width: unset; /* Firefox */
+  }
+}

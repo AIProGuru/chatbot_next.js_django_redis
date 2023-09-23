@@ -1,0 +1,19 @@
+@import "styles/mixins";
+
+.EditGroupPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .Container {
+    padding: 20px;
+  }
+}
+
+@include bp-min(500px) {
+  .EditGroupPage {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

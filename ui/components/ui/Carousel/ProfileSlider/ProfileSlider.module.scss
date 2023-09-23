@@ -1,0 +1,83 @@
+.ProfileSlider {
+  width: 100%;
+  height: 353px;
+  position: relative;
+
+  .CloseButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+  }
+
+  .ProfileActions {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+
+    .Button {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+  .ProfileCantSentMessage {
+    position: absolute;
+    bottom: 12px;
+    left: 20px;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: row;
+    & > div {
+      margin: 0 2px;
+    }
+  }
+  .ProfileSubStatus {
+    position: absolute;
+    bottom: -5px;
+    right: 16px;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: row;
+    & > div {
+      margin: 0 2px;
+    }
+  }
+}
+
+.rtl {
+  .CloseButton {
+    right: unset;
+    left: 20px;
+  }
+
+  .ProfileActions {
+    left: unset;
+    right: 20px;
+  }
+  .ProfileCantSentMessage {
+    left: unset;
+    right: 20px;
+  }
+  .ProfileSubStatus {
+    right: unset;
+    left: 16px;
+  }
+}
+
+.HiddenDebug {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: red;
+  color: white;
+  z-index: 10000000;
+}

@@ -1,0 +1,49 @@
+.ProgressContainer {
+  margin-top: 6px;
+  width: 100%;
+  background-color: var(--input-text-background);
+  padding: 10px 20px;
+  border-radius: 3px;
+  .TopText {
+    margin-bottom: 4px;
+  }
+  .BottomText {
+    margin-top: 4px;
+  }
+  .ProgressBarContainer {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    span {
+      font-size: 14px;
+      font-family: var(--font-heebo);
+      color: var(--progress-bar-count-text);
+    }
+    .SpanLeft {
+      margin-right: 5px;
+    }
+    .SpanRight {
+      margin-left: 5px;
+    }
+    .ProgressBar {
+      border-radius: 6px;
+      background-color: var(--body-background);
+      height: 9px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      .ProgressBarActive {
+        border-radius: 6px;
+        background-image: linear-gradient(to right, #f9a1af, #b15ed4 62%, #460fe1 135%);
+        height: 9px;
+      }
+    }
+  }
+
+  p {
+    font-size: 13px;
+    font-family: var(--font-heebo);
+    color: var(--typography-light-gray);
+    margin: 0;
+  }
+}

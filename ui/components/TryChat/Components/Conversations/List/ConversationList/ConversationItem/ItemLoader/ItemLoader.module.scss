@@ -1,0 +1,63 @@
+.ItemLoader {
+  width: 100%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  animation: myAnim 5s linear 0s infinite normal forwards;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--divider-color);
+  }
+
+  .Avatar {
+    width: 60px;
+    height: 60px;
+    background: rgba(#fff, .25);
+    border-radius: 5px;
+    margin-right: 16px;
+  }
+
+  .Info {
+    width: calc(100% - 60px - 16px);
+
+    .Title {
+      width: 70%;
+      height: 16px;
+      background: rgba(#fff, .25);
+      margin-bottom: 16px;
+      border-radius: 5px;
+    }
+
+    .Message {
+      width: 90%;
+      height: 24px;
+      background: rgba(#fff, .25);
+      border-radius: 5px;
+    }
+  }
+}
+
+@keyframes myAnim {
+  0% {
+    opacity: .75;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: .75;
+  }
+}
+
+.rtl {
+  .Avatar {
+    margin-right: unset;
+    margin-left: 16px;
+  }
+}

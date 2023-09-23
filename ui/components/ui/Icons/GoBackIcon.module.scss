@@ -1,0 +1,20 @@
+.GoBackIcon {
+  display: inline-block;
+  //margin: 2px 0 0 2px;
+  width: 14px;
+  height: 23px;
+  transform: rotate(-180deg);
+  //background: url('assets/eye.svg') no-repeat;
+
+  -webkit-mask-image: url(assets/goback.svg);
+  mask-image: url(assets/goback.svg);
+  background-color: var(--default-icon-color);
+
+  &:hover {
+    background-color: var(--hover-icon-color);
+  }
+}
+
+.rtl {
+  transform: rotate(0);
+}

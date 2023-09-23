@@ -1,0 +1,21 @@
+@import "styles/mixins";
+
+.CreateGroupList {
+  order: 2;
+  flex: 1 1 auto;
+  align-self: auto;
+  height: calc(100% - 61px - 95px);
+  max-height: calc(100% - 61px - 95px);
+
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@include bp-min(500px) {
+  .CreateGroupList {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

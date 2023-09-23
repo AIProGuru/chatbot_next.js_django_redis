@@ -1,0 +1,9 @@
+.DeleteIcon {
+  display: inline-block;
+  width: 20px;
+  height: 25px;
+
+  -webkit-mask-image: url(assets/delete.svg);
+  mask-image: url(assets/delete.svg);
+  background-color: var(--default-icon-color);
+}

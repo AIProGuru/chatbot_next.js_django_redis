@@ -1,0 +1,154 @@
+.ConversationHeader {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+
+  background: var(--body-background);
+  border-bottom: 1px solid var(--divider-color);
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 10px 0;
+
+  .GoBack {
+    width: 60px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .User {
+    display: flex;
+    flex-direction: row;
+    width: calc(60% - 30px);
+
+    .Photo {
+      width: 40px;
+      height: 40px;
+      background: blue;
+      border-radius: 90px;
+      margin-right: 13px;
+
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 90px;
+
+        &[src=""] {
+          display: none;
+        }
+      }
+    }
+
+    .Info {
+      display: flex;
+      flex-direction: column;
+
+      .Line {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        font-family: var(--font-assistant);
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--typography-light-gray);
+
+        .Name {
+          margin-right: 2px;
+          //font-family: var(--font-assistant);
+          //font-size: 15px;
+          //font-weight: 700;
+          //color: var(--typography-light-gray);
+        }
+
+        .Favorite {
+          width: 18px;
+          height: 20px;
+
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .Verified {
+          width: 18px;
+          height: 18px;
+
+          div {
+            margin-top: 1px;
+          }
+        }
+
+        .ProfileType {
+          margin-right: 3px;
+        }
+
+        .Age {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          span {
+            margin: 0 2px;
+          }
+
+          .Icon {
+            width: 12px;
+            height: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  .Chat {
+    width: calc(40% - 30px);
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .Typing {
+      font-size: 15px;
+      font-family: var(--font-heebo);
+      color: var(--typography-dark-gray);
+    }
+  }
+}
+
+.rtl {
+  .User {
+    .Photo {
+      margin-right: unset;
+      margin-left: 13px;
+    }
+
+    .Info {
+      .Line {
+        .Name {
+          margin-right: unset;
+          margin-left: 2px;
+        }
+
+        .ProfileType {
+          margin-right: unset;
+          margin-left: 3px;
+        }
+      }
+    }
+  }
+}

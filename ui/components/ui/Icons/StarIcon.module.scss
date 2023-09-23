@@ -1,0 +1,13 @@
+.StarIcon {
+  display: inline-block;
+  width: 22px;
+  height: 20px;
+
+  -webkit-mask-image: url(assets/star.svg);
+  mask-image: url(assets/star.svg);
+  background-color: var(--default-icon-color);
+
+  &:hover {
+    background-color: var(--hover-icon-color);
+  }
+}

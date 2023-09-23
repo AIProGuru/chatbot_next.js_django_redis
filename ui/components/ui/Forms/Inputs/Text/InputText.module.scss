@@ -1,0 +1,245 @@
+@import "styles/mixins";
+
+.InputTextContainer {
+  display: flex;
+  flex-direction: column;
+  //max-width: 100%;
+}
+
+.InputText {
+  position: relative;
+  width: 100%;
+  margin: 0 6px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  .ActiveInput {
+    padding-bottom: 10px !important;
+    padding-top: 18px !important;
+  }
+
+  // ---- span ----
+  .ActiveSpanLeft {
+    top: 0;
+    left: 14px;
+    font-size: 11px;
+  }
+
+  .ActiveSpanRight {
+    top: 0;
+    right: 14px;
+    font-size: 11px;
+  }
+
+  .ActiveSpanLeftRequired {
+    top: 0;
+    left: 30px;
+    font-size: 11px;
+  }
+
+  .ActiveSpanRightRequired {
+    top: 0;
+    right: 30px;
+    font-size: 11px;
+  }
+
+  // ---- end span ----
+
+  input[type="text"],
+  input[type="number"],
+  input[type="password"], input[type="email"] {
+    @include inputReset;
+
+    font-size: 16px;
+    font-family: var(--font-heebo);
+    color: var(--input-text-font-light-color);
+    background: var(--input-text-background);
+    padding: 14px;
+    border-radius: 3px;
+
+    width: 100%;
+
+    & ~ span {
+      transition: top 0.3s ease;
+      position: absolute;
+      color: var(--placeholder-color);
+    }
+
+    &:focus ~ span {
+      top: 0;
+      right: 14px;
+      font-size: 11px;
+    }
+
+    &:focus {
+      padding-bottom: 10px !important;
+      padding-top: 18px !important;
+    }
+  }
+}
+
+.Required {
+  input[type="text"],
+  input[type="number"],
+  input[type="password"], input[type="email"] {
+    padding-left: 30px;
+
+    &:focus ~ span {
+      left: 30px;
+    }
+  }
+
+  &:after {
+    content: "*";
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 13px;
+    transform: translate(-0%, -50%);
+    z-index: 10;
+    //color: red;
+    color: var(--input-text-font-light-color);
+  }
+
+  &-rtl {
+    input[type="text"],
+    input[type="number"],
+    input[type="password"], input[type="email"] {
+      padding-left: 0;
+      padding-right: 30px !important;
+
+      &:focus ~ span {
+        right: 30px;
+      }
+    }
+  }
+}
+
+.ltr {
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.rtl {
+  &:first-child {
+    margin-right: 0;
+  }
+
+  &:last-child {
+    margin-left: 0;
+  }
+
+  &:after {
+    left: unset;
+    right: 13px;
+  }
+
+  .OK {
+    right: unset;
+    left: 8px;
+  }
+}
+
+.Left {
+  input ~ span {
+    top: 14px;
+    left: 13px;
+  }
+
+  input:focus ~ span {
+    top: 0;
+    left: 14px;
+  }
+}
+
+.Right {
+  input ~ span {
+    top: 14px;
+    right: 13px;
+  }
+
+  input:focus ~ span {
+    top: 0;
+    right: 14px;
+  }
+}
+
+.LeftRequired {
+  input ~ span {
+    top: 14px;
+    left: 30px;
+  }
+
+  input:focus ~ span {
+    top: 0;
+    left: 14px;
+  }
+}
+
+.RightRequired {
+  input ~ span {
+    top: 14px;
+    right: 30px;
+  }
+
+  input:focus ~ span {
+    top: 0;
+    right: 14px;
+  }
+}
+
+.Counter {
+  .Count {
+    position: absolute;
+    right: 7px;
+    bottom: 4px;
+    font-size: 13px;
+    color: var(--typography-dark-gray);
+    background: var(--input-text-background);
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="password"], input[type="email"] {
+    padding-right: 65px;
+  }
+
+  &-rtl {
+    input[type="text"],
+    input[type="number"],
+    input[type="password"], input[type="email"] {
+      padding-left: 65px;
+      padding-right: 14px;
+    }
+
+    .Count {
+      right: unset;
+      left: 7px;
+    }
+  }
+}
+
+.InputTextError {
+  font-size: 14px !important;
+  margin: 8px 0 0 0 !important;
+  color: var(--typography-error) !important;
+  max-width: 100% !important;
+  word-break: break-word !important;
+}
+
+.OK {
+  position: absolute;
+  top: 40%;
+  right: 8px;
+  transform: translate(0%, -50%);
+
+  &-center {
+    top: 56%;
+  }
+}

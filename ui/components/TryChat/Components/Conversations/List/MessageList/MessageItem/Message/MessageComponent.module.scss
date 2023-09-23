@@ -1,0 +1,126 @@
+@import "styles/mixins";
+
+.MessageComponent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: fit-content;
+  max-width: 70%;
+  transition: 0.5s all;
+
+  &-author {
+    .Content {
+      background: var(--chat-messages-author-background) !important;
+      color: #fff !important;
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        right: 10px;
+        bottom: -9px;
+        border: 5px solid transparent;
+        border-right: 5px solid var(--chat-messages-author-background);
+        border-top: 5px solid var(--chat-messages-author-background);
+      }
+    }
+
+    .Info {
+      justify-content: flex-end;
+    }
+  }
+
+  &-options {
+    .Content {
+      max-height: 105px;
+      overflow-y: scroll;
+      @include showScrollbar;
+    }
+  }
+
+  //&-options {
+  //  position: absolute;
+  //  //top: -1000px;
+  //  top: 32%;
+  //  z-index: 10001;
+  //  //transition: 0.5s all;
+  //  animation: message .25s;
+  //}
+
+  .Content {
+    background-color: var(--chat-messages-default-background);
+    width: 100%;
+    //width: fit-content;
+    padding: 8px 14px;
+    border-radius: 4px;
+    color: #fff;
+    position: relative;
+
+    font-size: 16px;
+    line-height: 1.36;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      bottom: -9px;
+      border: 5px solid transparent;
+      border-left: 5px solid var(--chat-messages-default-background);
+      border-top: 5px solid var(--chat-messages-default-background);
+    }
+
+    .Nickname {
+      font-weight: 700;
+    }
+
+    .Message {
+      white-space: pre-line;
+      word-break: break-word;
+
+      &-blurred {
+        filter: blur(10px);
+      }
+    }
+
+    .Actions {
+      .Recommendations {
+        margin-top: 10px;
+        width: 100%;
+
+        p {
+          color: #ffffff;
+          margin: 0;
+          padding: 8px;
+        }
+      }
+    }
+  }
+
+  .Info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 10px;
+
+    .Date {
+      font-size: 12px;
+      font-family: var(--font-heebo);
+      color: var(--typography-dark-gray);
+    }
+
+    .ReadStatus {
+      padding: 0 4px;
+    }
+  }
+
+  //.Options {
+  //  position: absolute;
+  //  //top: calc(32% + 150px);
+  //  right: 0;
+  //  z-index: 10001;
+  //}
+}

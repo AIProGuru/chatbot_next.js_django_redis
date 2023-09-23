@@ -1,0 +1,13 @@
+.ArrowIcon {
+  display: inline-block;
+  width: 14px;
+  height: 9px;
+
+  -webkit-mask-image: url(assets/arrow.svg);
+  mask-image: url(assets/arrow.svg);
+  background-color: var(--default-icon-color);
+
+  &:hover {
+    background-color: var(--hover-icon-color);
+  }
+}

@@ -1,0 +1,34 @@
+@import 'styles/mixins';
+
+.CircleButton {
+  @include buttonReset;
+  width: 32px;
+  height: 32px;
+  background: var(--circle-button-background);
+  border-radius: 90px;
+  box-shadow: 0 0 25px 0 rgba(0,0,0,0.35);
+  cursor: pointer;
+
+  transition: var(--button-transition-time);
+
+  &:hover {
+    background: var(--circle-button-hover);
+  }
+}
+
+.Disabled {
+  opacity: 0.5;
+}
+
+.Color {
+  &-black {
+    background: var(--circle-button-color-black);
+
+    &:hover {
+      background: var(--circle-button-color-black-hover);
+    }
+  }
+  &-white {
+    background: var(--circle-button-color-white);
+  }
+}

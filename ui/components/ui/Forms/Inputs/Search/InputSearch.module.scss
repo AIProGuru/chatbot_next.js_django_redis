@@ -1,0 +1,69 @@
+@import "styles/mixins";
+
+.InputSearch {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+
+  .searchIcon {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .searchLeft {
+    left: 13px;
+    top: 3px;
+  }
+
+  .searchRight {
+    right: 13px;
+    top: 3px;
+  }
+
+  .inputLtr {
+    padding-left: 35px !important;
+  }
+
+  .inputRtl {
+    padding-right: 35px !important;
+  }
+
+  input[type="text"], input[type="number"] {
+    @include inputReset;
+
+    font-size: 16px;
+    font-family: var(--font-heebo);
+    color: var(--input-text-font-color);
+    background: var(--input-text-background);
+    padding: 13px;
+    border-radius: 3px;
+    width: 100%;
+  }
+
+
+}
+
+.ltr {
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.rtl {
+  &:first-child {
+    margin-right: 0;
+  }
+
+  &:last-child {
+    margin-left: 0;
+  }
+
+  &:after {
+    left: unset;
+    right: 13px;
+  }
+}

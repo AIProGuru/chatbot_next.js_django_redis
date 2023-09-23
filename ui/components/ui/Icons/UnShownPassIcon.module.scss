@@ -1,0 +1,23 @@
+//.UnShownPassIcon {
+//  display: inline-block;
+//  width: 30px;
+//  height: 30px;
+//
+//  -webkit-mask-image: url(assets/unShownPassword.svg);
+//  mask-image: url(assets/unShownPassword.svg);
+//  background-color: var(--default-icon-color);
+//
+//  &:hover {
+//    background-color: var(--hover-icon-color);
+//  }
+//}
+
+.UnShownPassIcon {
+  display: inline-block;
+
+  width: 30px;
+  height: 30px;
+
+  background-image: url('assets/unShownPassword.svg');
+  background-repeat: no-repeat;
+}

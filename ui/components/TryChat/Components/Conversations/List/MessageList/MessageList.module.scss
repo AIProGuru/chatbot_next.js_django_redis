@@ -1,0 +1,100 @@
+@import "styles/mixins";
+
+.MessagesList {
+  //order: 2;
+  //flex: 1 1 auto;
+  //align-self: auto;
+  //overflow-y: scroll;
+  //height: calc(100% - 80px - 80px);
+  //max-height: calc(100% - 80px - 80px);
+
+  //overflow: hidden;
+  //padding: 0 8px;
+
+  //.MessagesContainer {
+  //  height: 100%;
+  //
+  //  overflow-y: scroll;
+  //  display: flex;
+  //  flex-direction: column-reverse;
+  //}
+
+  order: 2;
+  flex: 1 1 auto;
+  align-self: auto;
+  //overflow-y: scroll;
+  //height: calc(100% - 80px - 80px);
+  //max-height: calc(100% - 80px - 80px);
+  height: calc(100% - 61px - 95px);
+  max-height: calc(100% - 61px - 95px);
+  //margin: 16px 0;
+
+  //
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  padding: 0 8px;
+
+  & div {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .DateItem {
+    font-size: 12px;
+    line-height: 1.58;
+    color: #8f8f8f;
+    text-align: center;
+  }
+
+  .SubscriptionItem {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.58;
+    color: var(--typography-light-gray);
+    text-align: center;
+
+    .Actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 8px;
+
+      .Button {
+        margin: 4px;
+
+        .ButtonText {
+          font-size: 12px;
+          font-weight: 600;
+          text-align: center;
+          color: #fff;
+          margin: 3px 20px;
+          text-transform: uppercase;
+        }
+      }
+
+
+    }
+  }
+}
+
+@include bp-min(500px) {
+  .MessagesList {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

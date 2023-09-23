@@ -1,0 +1,59 @@
+.CommentBlog {
+  padding: 20px 0;
+  p {
+    margin: 0;
+    margin-top: 6px;
+  }
+  .Title {
+    font-size: 15px;
+    color: var(--typography-light-gray);
+    font-weight: 700;
+    margin: 0;
+  }
+  .DateCreate {
+    font-size: 14px;
+    color: var(--typography-light-black);
+    font-weight: 500;
+  }
+  .Description {
+    font-size: 15px;
+    color: var(--typography-dark-gray);
+    font-weight: 500;
+  }
+  .ReplyOrShowReply {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+      p {
+        font-size: 14px;
+        color: var(--typography-purple);
+        text-decoration: underline;
+        font-weight: 500;
+      }
+      div {
+        margin: 0 4px;
+        margin-top: 5px;
+      }
+    }
+  }
+  .ReplyInput {
+    margin-top: 20px;
+    p {
+      margin: 0;
+    }
+  }
+  .RepliesContainer {
+    padding-right: 21px;
+    padding-top: 20px;
+    div {
+      margin-bottom: 25px;
+    }
+  }
+}

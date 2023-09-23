@@ -1,0 +1,74 @@
+@import "styles/mixins";
+
+.InputRadioHorizontal {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border-bottom: 1px solid var(--radio-divider-background);
+  width: 100%;
+
+  //background: var(--radio-group-background);
+  background: var(--radio-group-background-gray);
+
+  &:first-child {
+    border-radius: 4px 4px 0 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    border-radius: 0 0 4px 4px;
+  }
+
+  label {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+  }
+
+  .Radio {
+    width: 100%;
+    padding: 13px 13px;
+    min-height:75px;
+
+    display: flex;
+    flex-direction: row;
+    //justify-content: space-between;
+    align-items: center;
+
+    .Input {
+      width: 4%;
+    }
+
+    .Text {
+      //width: 65%;
+      margin-left: 22px;
+
+      p.Title {
+        font-size: 16px;
+        line-height: 1.25;
+        color: var(--typography-dark-gray);
+        margin: 0;
+      }
+
+      p.TitleActive {
+        font-weight: 700;
+        color: var(--typography-purple);
+      }
+    }
+  }
+
+  @include inputRadio;
+}
+
+.Active {
+  background: var(--radio-group-active-background);
+}
+
+.rtl {
+  .Radio {
+    .Text {
+      margin-left: unset;
+      margin-right: 22px;
+    }
+  }
+}

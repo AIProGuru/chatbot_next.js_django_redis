@@ -1,0 +1,46 @@
+.ContactUsPage {
+  .Container {
+    padding: 20px;
+
+    .WelcomeMessage {
+      margin-top: 20px;
+      margin-bottom: 30px;
+
+      p {
+        font-size: 16px;
+        line-height: 1.56;
+        text-align: center;
+        color: var(--typography-light-gray);
+        margin: 0;
+      }
+    }
+
+    .Form {
+      .Input {
+        &:not(:first-child) {
+          margin-top: 16px;
+        }
+
+        .ButtonOpenDrawer {
+          font-size: 16px;
+          color: var(--placeholder-color);
+          margin: 10px 0;
+          text-align: left;
+          width: 100%;
+        }
+      }
+
+      .Actions {
+        margin-top: 25px;
+
+        p.SubmitButtonText {
+          font-size: 16px;
+          font-weight: 500;
+          text-align: center;
+          color: #bebebe;
+          margin: 9px 0;
+        }
+      }
+    }
+  }
+}

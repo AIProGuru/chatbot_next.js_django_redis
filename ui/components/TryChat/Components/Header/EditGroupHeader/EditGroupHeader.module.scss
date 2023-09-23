@@ -1,0 +1,35 @@
+.EditGroupHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-assistant);
+  padding: 20px;
+  border-bottom: 1px solid var(--divider-color);
+
+  .HeaderGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .GoBack {
+      .Icon {
+        margin-top: 4px;
+      }
+    }
+
+    .Title {
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--typography-light-gray);
+      margin: 0 20px;
+    }
+  }
+
+  .LeaveGroup {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--typography-purple);
+    text-decoration: underline;
+  }
+}

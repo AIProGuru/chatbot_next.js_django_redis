@@ -1,0 +1,14 @@
+.CreateGroupIcon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  //background: url('assets/dialog.svg') no-repeat;
+
+  -webkit-mask-image: url(assets/createGroup.svg);
+  mask-image: url(assets/createGroup.svg);
+  background-color: var(--default-icon-color);
+
+  &:hover {
+    background-color: var(--hover-icon-color);
+  }
+}

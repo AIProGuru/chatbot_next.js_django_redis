@@ -1,0 +1,14 @@
+@import "styles/mixins";
+
+.CreateGroupActionBar {
+  order: 3;
+  flex: 0 1 auto;
+  align-self: auto;
+  position: relative;
+
+  @include bp-min(500px) {
+    width: 500px;
+    display: flex;
+    margin: 0 auto;
+  }
+}

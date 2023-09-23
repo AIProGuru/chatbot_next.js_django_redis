@@ -1,0 +1,107 @@
+.InputCheckBoxHorizontal {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border-bottom: 1px solid var(--radio-divider-background);
+  width: 100%;
+
+  //background: var(--radio-group-background);
+  background: var(--radio-group-background-gray);
+
+  &:first-child {
+    border-radius: 4px 4px 0 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    border-radius: 0 0 4px 4px;
+  }
+
+  label {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+  }
+
+  .Switch {
+    width: 100%;
+
+    padding: 0 20px;
+    min-height: 65px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .Input {
+      //width: 15%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+    }
+
+    .Text {
+      //width: 50%;
+
+      .Title {
+        p {
+          font-size: 15px;
+          margin: 0 12px;
+          line-height: 1.33;
+          color: var(--typography-dark-gray);
+        }
+      }
+    }
+  }
+
+  input[type='checkbox'] {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    outline: none;
+
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid var(--checkbox-border-color);
+    border-radius: 3px;
+
+    transition: .2s;
+
+    //&:checked {
+    //  background: var(--switch-input-background);
+    //}
+    &:checked {
+      border: 1px solid var(--switch-input-background);
+      background-image: url('../../../Icons/assets/tick.svg');
+      background-repeat: no-repeat;
+      background-origin: border-box;
+    }
+  }
+}
+
+.Variant {
+  &-signin {
+    .Switch {
+      .Text {
+        .Title {
+          p {
+            color: var(--typography-darkest-gray);
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    input[type='checkbox'] {
+      border: 1px solid var(--checkbox-darkest-gray-color);
+    }
+  }
+
+  &-step5 {
+    background: var(--radio-group-background);
+  }
+}

@@ -1,0 +1,196 @@
+@import "styles/mixins";
+
+.ChatHeader {
+  order: 1;
+  flex: 0 1 auto;
+  align-self: auto;
+  height: 61px;
+
+  .Container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--body-background);
+    border-bottom: 1px solid var(--divider-color);
+
+    .GoBack {
+      width: 32px;
+    }
+
+    .Avatar {
+      width: calc(40px + 8px + 8px + 8px);
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+
+      .Image {
+        width: 40px;
+        height: 40px;
+        //background: blue;
+        background: gray;
+        border-radius: 90px;
+        //margin-right: 13px;
+
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 90px;
+
+          &[src=""], &[src='#'] {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .Info {
+      width: calc(100% - 32px - 40px);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      .Top {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        .Nickname {
+          font-family: var(--font-assistant);
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--typography-light-gray);
+        }
+
+        .Favorite {
+          width: calc(18px + 8px);
+          height: 18px;
+
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .Verified {
+          width: 18px;
+          height: 18px;
+
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          div {
+            margin-top: 3px;
+          }
+        }
+      }
+
+      .Bottom {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .ProfileInfo {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+
+          .ProfileType {
+            font-family: var(--font-assistant);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--typography-light-gray);
+            margin-right: 4px;
+
+            &-bot {
+              color: var(--typography-purple);
+            }
+          }
+
+          .Female, .Male {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            span {
+              font-family: var(--font-assistant);
+              font-size: 15px;
+              font-weight: 700;
+              color: var(--typography-light-gray);
+            }
+
+            .Icon {
+              margin-right: 2px;
+            }
+          }
+
+          .Female {
+            margin-right: 4px;
+          }
+
+          .Male {
+
+          }
+        }
+
+        .Typing {
+          font-size: 15px;
+          font-family: var(--font-heebo);
+          color: var(--typography-dark-gray);
+        }
+      }
+    }
+  }
+}
+
+.rtl {
+  .Container {
+    .Info {
+      .Bottom {
+        .ProfileInfo {
+          .ProfileType {
+            margin-right: unset;
+            margin-left: 4px;
+          }
+
+          .Female, .Male {
+            .Icon {
+              margin-right: unset;
+              margin-left: 2px;
+            }
+          }
+
+          .Female {
+            margin-right: unset;
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include bp-min(500px) {
+  .ChatHeader {
+    .Container {
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

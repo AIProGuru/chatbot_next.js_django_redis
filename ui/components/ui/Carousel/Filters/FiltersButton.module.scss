@@ -1,0 +1,54 @@
+@import "styles/mixins";
+
+.FiltersButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background: var(--filter-button-background);
+  padding: 4px 12px;
+  border-radius: 14px;
+  margin-right: 10px;
+
+  .Text {
+    font-size: 12px;
+    color: var(--typography-light-gray);
+    margin-right: 5px;
+  }
+
+  .CloseButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    button {
+      @include buttonReset;
+
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  .Icon {
+    div {
+      margin-right: 4px;
+    }
+  }
+}
+
+.rtl {
+  margin-right: unset;
+  margin-left: 10px;
+
+  .Text {
+    margin-right: unset;
+    margin-left: 5px;
+  }
+
+  .Icon {
+    div {
+      margin-right: unset;
+      margin-left: 4px;
+    }
+  }
+}

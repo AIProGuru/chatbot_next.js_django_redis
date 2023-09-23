@@ -1,0 +1,17 @@
+.MessageCount {
+  background: var(--button-primary-color);
+  width: min-content;
+  height: 19px;
+  width: 19px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //margin-bottom: 3px;
+  .Count {
+    text-align: center;
+    margin-right: 0 !important;
+    font-size: 10px !important;
+    line-height: 1 !important;
+  }
+}

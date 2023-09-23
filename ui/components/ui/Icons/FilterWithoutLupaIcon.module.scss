@@ -1,0 +1,14 @@
+.FilterWithoutLupaIcon {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  //background: url('assets/dialog.svg') no-repeat;
+
+  -webkit-mask-image: url(assets/filterWithoutLupa.svg);
+  mask-image: url(assets/filterWithoutLupa.svg);
+  background-color: var(--default-icon-color);
+
+  &:hover {
+    background-color: var(--hover-icon-color);
+  }
+}

@@ -1,0 +1,97 @@
+.RecommendationListItem {
+  background: var(--rec-list-item-background);
+  padding: 20px;
+  border-radius: 3px;
+
+  display: flex;
+  flex-direction: row;
+
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  .Photo {
+    width: 90px;
+    height: 108px;
+    background: blue;
+    margin-right: 20px;
+
+    img {
+      width: 90px;
+      height: 108px;
+      object-fit: cover;
+
+      &[src=''] {
+        display: none;
+      }
+    }
+  }
+
+  .Information {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 90px - 20px);
+
+    .Basic {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 9px;
+  
+      width: 100%;
+      flex-wrap: wrap;
+  
+      font-size: 13px;
+      line-height: 1.46;
+      font-weight: 700;
+      color: var(--typography-light-gray);
+  
+      .ProfileType {
+        margin-right: 4px;
+      }
+  
+      .ManAge,
+      .WomanAge {
+        margin-right: 4px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+  
+        .Icon {
+          width: 15px;
+          height: 15px;
+  
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+  
+      .Verified {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    
+    .Comment {
+      font-size: 13px;
+      line-height: 1.62;
+      color: #bebebe;
+      margin-top: 10px;
+      word-break: break-word;
+    }
+
+    .Switch {
+      width: 100%;
+      margin-top: 15px;
+    }
+  }
+}
+
+.rtl {
+  .Photo {
+    margin-right: unset;
+    margin-left: 20px;
+  }
+}

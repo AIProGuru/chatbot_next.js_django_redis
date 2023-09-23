@@ -1,0 +1,21 @@
+.FiltersAvailableCarousel {
+  overflow: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  display: flex;
+  flex-direction: row;
+
+  padding: 0 0 20px 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.rtl {
+  padding: 0 0 20px 0;
+}

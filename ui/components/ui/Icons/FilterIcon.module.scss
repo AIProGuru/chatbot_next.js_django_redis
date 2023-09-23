@@ -1,0 +1,22 @@
+.FilterIcon {
+  display: inline-block;
+  width: 27px;
+  height: 18px;
+
+  background-image: url('assets/filter.svg');
+  background-repeat: no-repeat;
+
+  //background: url('assets/filter.svg') no-repeat;
+  //-webkit-mask-image: url(assets/filter.svg);
+  //mask-image: url(assets/filter.svg);
+  //background-color: var(--default-icon-color);
+  -webkit-mask-image: url(assets/filter.svg);
+  mask-image: url(assets/filter.svg);
+
+  &:hover {
+    background-image: unset;
+    background-repeat: unset;
+
+    background-color: var(--hover-icon-color);
+  }
+}

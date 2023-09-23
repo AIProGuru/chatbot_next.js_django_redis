@@ -1,0 +1,35 @@
+.InputRadioGroupHG {
+  position: relative;
+  margin-top: 45px;
+  margin-bottom: 45px;
+
+  .Children {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .Line {
+    //width: 100%;
+    width: 75%;
+    height: 1px;
+
+    position: absolute;
+    //top: 50%;
+    top: 10px;
+    left: 50%;
+    //right: 0;
+    transform: translate(-50%, 0%);
+
+    //background: linear-gradient(to right, #f9a1af 0%, #b15ed4 46%, #460fe1);
+    //background: #b663d1;
+    background: #b663d1;
+    background: linear-gradient(to right, #f9a1af 0%, #b15ed4 46%, #460fe1);
+    z-index: 0;
+  }
+}
+
+.rtl {
+  .Line {
+    background: linear-gradient(to left, #f9a1af 0%, #b15ed4 46%, #460fe1);
+  }
+}

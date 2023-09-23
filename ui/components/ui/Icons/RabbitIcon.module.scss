@@ -1,0 +1,13 @@
+.RabbitIcon {
+  display: inline-block;
+  width: 19px;
+  height: 24px;
+
+  -webkit-mask-image: url(assets/rabbit.svg);
+  mask-image: url(assets/rabbit.svg);
+  background-color: var(--default-icon-color);
+
+  &:hover {
+    background-color: var(--hover-icon-color);
+  }
+}

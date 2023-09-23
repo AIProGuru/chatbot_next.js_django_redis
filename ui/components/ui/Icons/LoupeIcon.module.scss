@@ -1,0 +1,9 @@
+.LoupeIcon {
+  display: inline-block;
+  width: 13px;
+  height: 18px;
+
+  -webkit-mask-image: url(assets/loupe.svg);
+  mask-image: url(assets/loupe.svg);
+  background-color: var(--default-icon-color);
+}

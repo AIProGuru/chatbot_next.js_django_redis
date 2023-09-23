@@ -1,0 +1,11 @@
+.NetworkStatusIcon {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  background: var(--profile-ad-status-offline);
+  border-radius: 90px;
+}
+
+.NetworkOnline {
+  background: var(--profile-ad-status-online);
+}

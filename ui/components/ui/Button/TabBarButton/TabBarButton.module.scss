@@ -1,0 +1,76 @@
+.TabBarButtonContainer {
+  position: relative;
+
+  .TabBarButton {
+    margin: 0;
+    padding: 0;
+    background: unset;
+    appearance: none;
+    outline: none;
+    border-radius: 0;
+    border: unset;
+
+    //width: 32px;
+    //height: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 56px;
+
+    cursor: pointer;
+    transition: var(--button-transition-time);
+
+    &:hover {
+      .Label {
+        span {
+          color: var(--hover-icon-color) !important;
+        }
+      }
+
+      .Icon {
+        div {
+          background-color: var(--hover-icon-color);
+        }
+      }
+    }
+  }
+}
+
+.Icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.Label {
+  span {
+    font-size: 12px;
+    font-family: var(--font-assistant) !important;
+    color: var(--typography-light-gray) !important;
+  }
+
+  //&:hover {
+  //  span {
+  //    color: var(--hover-icon-color) !important;
+  //  }
+  //}
+}
+
+.Active {
+  .Label {
+    span {
+      color: var(--hover-icon-color) !important;
+    }
+  }
+
+  .Icon {
+    div {
+      background-color: var(--hover-icon-color);
+    }
+  }
+}

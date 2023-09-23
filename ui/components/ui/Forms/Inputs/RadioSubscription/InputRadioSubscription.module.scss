@@ -1,0 +1,88 @@
+@import "styles/mixins";
+
+.InputRadioSubscription {
+  padding: 0;
+  position: relative;
+  //border-bottom: 1px solid var(--radio-divider-background);
+  width: 100%;
+
+  border: 1px solid var(--subscription-radio-border);
+  border-radius: 4px;
+  margin-top: 10px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  label {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+  }
+
+  .Radio {
+    width: 100%;
+    padding: 13px 13px;
+    min-height:75px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .Input {
+      width: 4%;
+    }
+
+    .Text {
+      width: 65%;
+
+      p.Title {
+        font-size: 16px;
+        line-height: 1.25;
+        color: var(--typography-dark-gray);
+        margin: 0;
+      }
+
+      p.TitleActive {
+        font-weight: 500;
+        color: var(--typography-purple);
+      }
+
+      p.Description {
+        font-size: 13px;
+        line-height: 1.08;
+        margin: 0;
+        color: var(--typography-dark-gray);
+      }
+
+      p.DescriptionActive {
+        font-weight: 500;
+        color: var(--typography-purple);
+      }
+    }
+
+    .Price {
+      span.Value {
+        font-size: 16px;
+        color: var(--typography-dark-gray);
+      }
+
+      span.ValueActive {
+        font-weight: 500;
+        color: var(--typography-purple);
+      }
+    }
+  }
+
+  @include inputRadio;
+}
+
+.Active {
+  //background: var(--radio-group-active-background);
+  border: 1px solid var(--subscription-radio-border-active);
+}
+
+.Disabled {
+  opacity: 0.3;
+}

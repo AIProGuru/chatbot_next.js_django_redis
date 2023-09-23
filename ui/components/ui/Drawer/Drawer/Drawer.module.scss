@@ -1,0 +1,210 @@
+@import "styles/mixins";
+
+.Backdrop {
+  position: fixed;
+  inset: 0;
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background: var(--backdrop-background);
+  z-index: 2000;
+
+  //animation: fadein 2s;
+  opacity: 0;
+  transition: .25s;
+}
+
+.ActiveBackdrop {
+  opacity: 1;
+}
+
+.AbsoluteClose {
+  position: absolute;
+  z-index: 2000;
+  top: 0;
+
+  width: 15%;
+  //background: red;
+  opacity: 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &-left {
+    right: 0;
+  }
+
+  &-right {
+    left: 0;
+  }
+
+  .Button {
+    margin-top: 15px;
+  }
+}
+
+.ActiveAbsoluteClose {
+  opacity: 1;
+}
+
+.Drawer {
+  position: fixed;
+  //bottom: -100%;
+  //left: 0;
+  z-index: 2001;
+  //width: 100%;
+  transition: .25s;
+  opacity: 0;
+  visibility: hidden;
+
+  .Header {
+    //display: block;
+    background: var(--bottom-drawer-header);
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    padding: 8px 8px;
+    position: absolute;
+    //margin-bottom: 20px;
+
+    //&-right {
+    //  width: 10%;
+    //  top: 0;
+    //  left: -10%;
+    //  height: 100%;
+    //  position: absolute;
+    //}
+    &-hidden {
+      display: none;
+    }
+
+    .Title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      color: var(--typography-black);
+      font-size: 18px;
+      font-weight: 700;
+      width: 70%;
+      text-align: center;
+    }
+  }
+
+
+
+  .Container {
+    background: var(--bottom-drawer-background);
+    max-height: 70vh;
+    overflow-y: scroll;
+
+    &-FullHeight {
+      height: 100vh;
+      max-height: 100vh;
+    }
+    margin-top: 48px; // header size
+  }
+
+  .ContainerSides {
+    background: var(--bottom-drawer-background);
+    max-height: 70vh;
+    overflow-y: scroll;
+
+    &-FullHeight {
+      height: 100vh;
+      max-height: 100vh;
+    }
+  }
+}
+
+.ActiveDrawer {
+  bottom: 0 !important;
+  opacity: 1 !important;
+  visibility: visible;
+
+  &-bottom {
+    bottom: 0 !important;
+    opacity: 1 !important;
+  }
+
+  &-left {
+    left: 0 !important;
+    opacity: 1 !important;
+  }
+
+  &-right {
+    right: 0 !important;
+    opacity: 1 !important;
+  }
+}
+
+.Position {
+  &-bottom {
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+  }
+
+  &-left {
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    width: 85%;
+  }
+
+  &-right {
+    right: -100%;
+    top: 0;
+    bottom: 0;
+    width: 85%;
+  }
+}
+
+.Active {
+  &-bottom {
+    bottom: 0 !important;
+    opacity: 1 !important;
+  }
+}
+
+@include bp-min(500px) {
+  .Position {
+    &-right {
+      right: calc(500px * 0.85 / 2);
+      width: calc(500px * 0.85);
+    }
+
+    &-left {
+      left: calc(500px * 0.85 / 2);
+      width: calc(500px * 0.85);
+    }
+
+    &-bottom {
+      width: 500px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+  }
+
+  .ActiveDrawer {
+    &-right {
+      right: calc(50% - 500px/2) !important;
+    }
+
+    &-left {
+      left: calc(50% - 500px/2) !important;
+    }
+  }
+
+  .AbsoluteClose {
+    display: none;
+  }
+}
+
+.FixedHeight {
+  .Container {
+    height: 70vh;
+  }
+}

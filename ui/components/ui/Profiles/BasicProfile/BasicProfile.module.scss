@@ -1,0 +1,124 @@
+.BasicProfile {
+  //padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+
+  .Info {
+    width: 60%;
+
+    .BigText {
+      font-family: var(--font-assistant);
+      font-size: 20px;
+      line-height: 0.95;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--typography-light-gray);
+    }
+
+    p {
+      margin: 0;
+      color: var(--typography-light-gray);
+      font-size: 14px;
+      font-family: var(--font-assistant);
+
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .Status {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      margin: 0;
+    }
+
+    .Marks {
+      display: flex;
+      flex-direction: column;
+
+      .Online, .Verified {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+
+        p {
+          font-size: 14px;
+          line-height: 1.36;
+          font-family: var(--font-assistant);
+          //margin: 0 6px 0 0;
+        }
+
+        .Icon {
+          width: 24px;
+          height: 24px;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .Online {
+        p {
+          //color: var(--basic-profile-status-online-text-color);
+          color: var(--profile-ad-status-offline);
+        }
+      }
+
+      .Network {
+        &-false {
+          p {
+            color: var(--profile-ad-status-offline);
+          }
+        }
+
+        &-true {
+          p {
+            color: var(--basic-profile-status-online-text-color);
+          }
+        }
+      }
+
+      .Verified {
+        p {
+          color: var(--basic-profile-status-verified-text-color);
+        }
+      }
+    }
+
+    .Location {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+
+      p {
+        font-size: 12px;
+        font-family: var(--font-assistant);
+        color: var(--typography-dark-gray);
+      }
+
+      .Icon {
+        width: 24px;
+        height: 24px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

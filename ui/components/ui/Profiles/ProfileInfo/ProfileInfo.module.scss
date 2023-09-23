@@ -1,0 +1,53 @@
+.ProfileInfo {
+  background: var(--profile-info-background);
+  padding: 20px;
+  margin-top: 100px;
+
+  display: flex;
+  flex-direction: row;
+
+  .Section {
+    width: 50%;
+    position: relative;
+
+    .Icon {
+      position: absolute;
+      top: -86px;
+      left: 10px;
+    }
+
+    .Profile {
+      p.Title {
+        font-size: 14px;
+        font-weight: 700;
+        font-family: var(--font-assistant);
+        color: var(--typography-light-gray);
+        margin: 5px 0 17px 0;
+      }
+
+      p {
+        margin: 0;
+        font-size: 14px;
+        font-family: var(--font-assistant);
+        color: var(--typography-light-gray);
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+
+        strong {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.rtl {
+  .Section {
+    .Icon {
+      left: unset;
+      right: 10px;
+    }
+  }
+}

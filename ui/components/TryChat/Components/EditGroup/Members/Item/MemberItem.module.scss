@@ -1,0 +1,90 @@
+.MemberItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--divider-color);
+  padding: 20px 0;
+
+  .ProfileGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .Avatar {
+      width: 64px;
+      height: 64px;
+      background: var(--placeholder-color);
+      border-radius: 6px;
+
+      img {
+        width: 64px;
+        height: 64px;
+        border-radius: 5px;
+
+        &[src='#'], &[src=''] {
+          display: none;
+        }
+      }
+    }
+
+    .ProfileInfo {
+      display: flex;
+      flex-direction: column;
+      margin: 0 20px;
+
+      .Nickname {
+        font-family: var(--font-assistant);
+        font-size: 15px;
+        font-weight: bold;
+        color: var(--typography-light-gray);
+        word-break: break-all;
+      }
+
+      .Details {
+        display: flex;
+        flex-direction: row;
+
+        font-family: var(--font-assistant);
+        font-size: 15px;
+        font-weight: bold;
+        color: var(--typography-light-gray);
+
+        .ProfileType {
+
+        }
+
+        .AgeInfo {
+          display: flex;
+          flex-direction: row;
+          margin: 0 4px;
+
+
+          .Age {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0 2px;
+
+            .Text {
+              margin: 0 2px;
+            }
+
+            .Icon {
+              width: 11px;
+              height: 11px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Actions {
+    position: relative;
+  }
+}

@@ -1,0 +1,113 @@
+.ProfileActions {
+  margin: 20px;
+
+  .ButtonActions {
+    display: flex;
+    flex-direction: row;
+
+    .Button1 {
+      width: 100%;
+      margin-right: 4px;
+
+      p {
+        font-size: 14px;
+        color: var(--typography-dark-gray);
+        margin: 11px 6px;
+        text-align: left;
+      }
+    }
+
+    .Button2 {
+      margin-left: 4px;
+
+      p {
+        font-size: 14px;
+        color: var(--typography-light-gray);
+        margin: 11px 6px;
+      }
+    }
+  }
+
+  .History {
+    margin-top: 10px;
+
+    a {
+      font-family: var(--font-assistant);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--typography-purple);
+
+      &:hover {
+        color: var(--typography-light-gray);
+      }
+    }
+  }
+}
+
+
+.rtl {
+  .ButtonActions {
+    .Button1 {
+      margin-right: unset;
+      margin-left: 4px;
+
+      p {
+        text-align: right;
+      }
+    }
+
+    .Button2 {
+      margin-left: unset;
+      margin-right: 4px;
+    }
+  }
+}
+
+.ChatLoading {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: var(--typography-purple);
+}
+
+.RoomLoading {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    font-size: 14px;
+    color: var(--typography-purple);
+    margin: 0;
+    margin-right: 8px;
+  }
+
+  p.RoomReloadText {
+    color: var(--typography-light-gray);
+    margin: 0;
+  }
+}
+
+.ChatError {
+
+  padding: 0 20px 20px 20px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  p {
+    font-size: 14px;
+    color: var(--typography-error);
+    margin: 0;
+    margin-right: 8px;
+  }
+
+  p.UpgradeText {
+    color: var(--typography-light-gray);
+    margin: 0;
+  }
+}

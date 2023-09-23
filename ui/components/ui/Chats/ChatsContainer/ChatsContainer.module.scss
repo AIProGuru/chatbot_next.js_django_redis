@@ -1,0 +1,167 @@
+.ChatsContainer {
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+
+  .genderLtr {
+    margin-right: 5px;
+  }
+
+  .genderRtl {
+    margin-left: 5px;
+  }
+
+  .LeftSide {
+    display: flex;
+
+    .ContentContainer {
+      margin: 0 15px;
+      font-family: var(--font-assistant);
+      font-weight: 700;
+
+      .NameContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        & > div {
+          margin: 0 5px;
+        }
+      }
+
+      .AgeContainer {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        align-items: center;
+
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--typography-light-gray);
+
+        //.ProfileType {
+        //  padding: 2px;
+        //}
+
+        .ProfileAge {
+          padding: 0 2px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .Age {
+            padding: 0 2px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            span {
+              padding: 0 2px;
+            }
+
+            div {
+              margin: 0 2px;
+            }
+          }
+        }
+
+        //div {
+        //  display: flex;
+        //  flex-direction: row;
+        //  align-items: center;
+        //
+        //  & > div {
+        //    margin: 0 3px;
+        //  }
+        //}
+      }
+
+      .LastMessage {
+        width: 170px;
+        font-weight: 300;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .RightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .UnreadCountContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      & > p {
+        font-size: 13px;
+      }
+    }
+  }
+
+  p {
+    color: var(--typography-light-gray);
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .GreyAvatar {
+    height: 60px;
+    width: 60px;
+    background: gray;
+    //border-radius: 100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      //border-radius: 100px;
+
+      &[src=""] {
+        display: none;
+      }
+    }
+  }
+}
+
+.SwipeButton {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+
+  p {
+    text-align: center;
+    color: var(--typography-light-gray);
+  }
+}
+
+.SwipeDelete {
+  background-color: var(--btn-delete-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  p {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+}
+
+.SwipeMark {
+  background-color: var(--button-primary-color);
+}
+
+.SwipeSave {
+  background-color: var(--typography-light-gray);
+
+  p {
+    color: var(--body-background) !important;
+  }
+}

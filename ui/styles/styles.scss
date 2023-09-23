@@ -1,0 +1,3410 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Heebo:wght@100;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+@import "mixins";
+@import "swiper-custom";
+//@import "picker";
+@import "crop-custom";
+@import "calendar";
+@import "react-tel-input";
+
+/// variables
+:root {
+  --body-background: #0c0b1e;
+  --default-icon-color: #bebebe;
+  //--default-font-color: #bebebe;
+  --typography-light-gray: #bebebe;
+  --typography-dark-gray: #8f8f8f;
+  --typography-darkest-gray: #737373;
+  --typography-purple: #4d14e0;
+  --typography-pink: #efa4ae;
+  --typography-error: #ff5858;
+  --typography-black: #0c0b1e;
+  --typography-light-black: #595959;
+  --hover-icon-color: #4f43ff;
+  --upcoming-event-background: #242333;
+  --circle-button-background: rgba(255, 255, 255, 0.5);
+  --circle-button-hover: rgba(255, 255, 255, 0.75);
+  --circle-button-color-black: #0c0b1e;
+  --circle-button-color-white: rgba(255, 255, 255, 0.8);
+  --circle-button-color-black-hover: #211F47;
+  --close-icon-color-dark: #0c0b1e;
+  --close-icon-color-light: #bebebe;
+  --action-icon-color-light: #BEBEBE;
+  --action-icon-color-dark: #0c0b1e;
+  --divider-color: #242333;
+  --divider-color-light: #bebebe;
+  --nophoto-color: #242333;
+  --nophoto-color-light: #bebebe;
+  --button-primary-color: #4d14e0;
+  --button-primary-hover: #6329f5;
+  --button-outline-white: #bebebe;
+  --button-outline-black: #0c0b1e;
+  --button-background-white-gray-active: #5f5f5f;
+  --button-background-white: #ffffff;
+  --button-background-gray: #242333;
+  --button-background-gray-hover: #403E58;
+  --wrapper-background: #242333;
+  --tabs-border-default: #242333;
+  --tabs-border-active: #bebebe;
+  --tabs-border-active-purple: #4d14e0;
+  --backdrop-background: rgba(0, 0, 0, 0.85);
+  --bottom-drawer-background: #0c0b1e;
+  --bottom-drawer-header: #bebebe;
+  --radio-group-background: #393847;
+  --radio-group-background-gray: #242333;
+  --radio-group-active-background: #181728;
+  --radio-divider-background: #0e0c21;
+  --switch-input-toggle-background: #ffffff;
+  --switch-input-background: #4527d7;
+  --radio-input-active: #4d14e0;
+  --radio-input-border: #8f8f8f;
+  --input-text-background: #242333;
+  --input-text-font-color: #8f8f8f;
+  --input-phone-select: #39374A;
+  --input-text-font-light-color: #bebebe;
+  --radio-vertical-background: #242333;
+  --checkbox-border-color: #979797;
+  --checkbox-darkest-gray-color: #737373;
+  --input-otp-background: #242333;
+  --input-otp-active: #3d3c4a;
+  --user-account-wrapper-background: #181728;
+  --accordion-item-background: #242333;
+  --accordion-item-content-background: #201F30;
+  --accordion-divider-background: #0e0c21;
+  --banner-background: #4d14e0;
+  --banner-button-text: #bebebe;
+  --profile-ad-background: #242333;
+  --profile-ad-status-online: #88f8a8;
+  --profile-ad-status-offline: #ff5858;
+  --btn-delete-background: #ff4848;
+  --carousel-text-button-border-color: #4d14e0;
+  --basic-profile-status-online-text-color: #91f9b0;
+  --basic-profile-status-verified-text-color: #4f43ff;
+  --tag-background-default: rgba(255, 255, 255, 0.1);
+  --profile-info-background: #242333;
+  --profile-block-background: #242333;
+  --bubble-background-default: #460fe1;
+  --chat-options-background: #bebebe;
+  --chat-options-background-hover: #A8A8A8;
+  --chat-options-backdrop: rgba(0, 0, 0, 0.5);
+  --chat-messages-default-background: #242333;
+  --chat-messages-author-background: #4d14e0;
+  --chat-messages-text-color: #fff;
+  --font-heebo: 'Heebo', sans-serif;
+  --font-assistant: 'Assistant', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+  --button-transition-time: 0.2s;
+  //--mobile-breakpoint: 400px;
+  //--tablet-breakpoint: 800px;
+  //--notebook-breakpoint: 1000px;
+  //--pc-breakpoint: 1200px;
+  //--theme-color: red;
+  --swiper-pagination-color: #4d14e0;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-width: 8px;
+  --swiper-pagination-bullet-height: 8px;
+  --swiper-pagination-bullet-inactive-color: #d8d8d8;
+  //--swiper-pagination-bullet-inactive-opacity: 0.2;
+  //--swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
+  --favorite-profile-star-active: #efa4ae;
+  --placeholder-color: #8f8f8f;
+  --error-text-color: #ff5858;
+  --in-progress-bar-count-text: #4d14e0;
+  --progress-bar-count-text: #efa4ae;
+  --shadow-top: linear-gradient(180deg, rgba(12, 11, 30, 1) 0%, rgba(12, 11, 30, 0) 100%);
+  --shadow-bottom: linear-gradient(180deg, rgba(12, 11, 30, 0) 0%, rgba(12, 11, 30, 1) 100%);
+  --rec-list-item-background: #242333;
+  --subscription-notification-background: #242333;
+  --subscription-radio-border: #bebebe;
+  --subscription-radio-border-active: #4f43ff;
+  --input-checkbox-filter-border: #2C1A8C;
+  --filter-button-background: #242333;
+}
+
+// example of how tow add theme support
+@media (prefers-color-scheme: dark) {
+  :root {
+    //--color-background: #aaaaff;
+  }
+}
+
+// scrollbar
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 9999px var(--button-background-gray-hover);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a3c;
+  border: 0 none #ffffff;
+  border-radius: 0;//100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #33324a;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #413f60;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0b1d;
+  border: 0 none #ffffff;
+  border-radius: 0;//100px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #18172f;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #28254a;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+//html, body, #__next {
+//  height: 100%;
+//}
+
+//html,
+//body,
+//body > div:first-child,
+//div#__next,
+//div#__next > div {
+//  height: 100%;
+//}
+
+html,
+body, #__next {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--body-background);
+  color: green;
+  font-family: sans-serif !important;
+  font-family: var(--font-heebo) !important;
+}
+
+.Mobile {
+  width: 100%;
+  height: 100%;
+}
+
+@include bp-min(500px) {
+  .Mobile {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body {
+    //display: flex;
+    //flex-direction: column;
+    //align-items: center;
+  }
+
+  //body {
+  //  //max-width: 390px;
+  //  //width: 500px;
+  //  //position: absolute;
+  //  //left: 50%;
+  //  //transform: translate(-50%, 0%);
+  //  //display: flex;
+  //  //flex-direction: column;
+  //  //align-items: center;
+  //}
+}
+
+// styles for pages, not components
+.PartiesScreen {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .WelcomeText {
+    p {
+      margin-top: 17px;
+      margin-bottom: 27px;
+      font-family: var(--font-heebo) !important;
+      font-weight: 400;
+      font-size: 13px;
+      color: var(--typography-light-gray);
+    }
+  }
+
+  .UpcomingEvents {
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    p.BlockHeader {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--typography-light-gray);
+    }
+  }
+
+  .EventList {
+    margin-top: 59px;
+    padding-bottom: 64px;
+
+    p.SectionTitle {
+      margin-top: 0;
+      margin-bottom: 13px;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--typography-light-gray);
+    }
+  }
+}
+
+.PartyScreen {
+  height: 100%;
+
+  .BottomDrawer {
+    padding: 30px 20px 50px 20px;
+
+    p.Info {
+      text-align: center;
+      margin-bottom: 25px;
+      color: var(--typography-light-gray);
+    }
+
+    div.SwitchContainer {
+      padding-top: 25px;
+      padding-bottom: 38px;
+    }
+
+    p.SubmitButtonText {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 7px 0;
+      color: var(--typography-light-gray);
+    }
+
+    .DateExpContainer {
+      display: flex;
+      flex-direction: row;
+
+      input {
+        display: none;
+      }
+    }
+
+    .DeleteButton {
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+    }
+
+    .Error {
+      font-size: 14px;
+      margin: 8px 0 0 0;
+      color: var(--typography-error);
+    }
+  }
+
+  .PriceContainer {
+    height: 100vh;
+    padding: 20px 20px 308px;
+    overflow-y: auto;
+
+    .GoBack {
+      padding-bottom: 0;
+    }
+
+    p.Info {
+      text-align: center;
+      margin-bottom: 25px;
+      color: var(--typography-light-gray);
+    }
+
+    div.Selector {
+      padding-bottom: 25px;
+    }
+
+    div.SwitchContainer {
+      padding-top: 25px;
+      padding-bottom: 38px;
+    }
+  }
+
+  .BottomContainer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    @include bp-min(500px) {
+      width: 500px !important;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+
+    .Subtotal {
+      padding: 20px;
+      background: var(--body-background);
+
+      .TotalPriceContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          margin-top: 0;
+          margin-bottom: 10px;
+          color: var(--typography-dark-gray);
+        }
+      }
+
+      .PromoCode {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .Input {
+          width: 64%;
+
+          p {
+            font-size: 14px;
+            color: var(--typography-dark-gray);
+            margin: 11px 6px;
+            text-align: left;
+          }
+        }
+
+        .Button {
+          button {
+            padding: 7px 13px;
+          }
+
+          p {
+            font-size: 16px;
+            color: var(--typography-purple);
+            margin: 9px 0;
+          }
+        }
+      }
+    }
+
+    .Total {
+      padding: 20px;
+      background: var(--typography-dark-gray);
+
+      .TotalPriceContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          margin-top: 0;
+          margin-bottom: 10px;
+          color: var(--typography-black);
+        }
+      }
+
+      .WithoutCard {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+
+        a {
+          color: var(--typography-black);
+        }
+      }
+
+      p.SubmitButtonText {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 11px 0;
+        color: var(--typography-light-gray);
+      }
+    }
+  }
+
+  .PaymentContainer {
+    height: 100vh;
+    overflow-y: auto;
+
+    iframe {
+      border: 0;
+    }
+
+    .Header {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      padding: 20px;
+
+      .HeaderTitle {
+        display: flex;
+        align-items: center;
+
+        p {
+          font-family: var(--font-heebo);
+          color: var(--typography-light-gray);
+          font-size: 16px;
+          margin: 0;
+        }
+      }
+
+      .GoBack {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+      }
+    }
+  }
+
+  div.Selector {
+    padding-bottom: 25px;
+  }
+
+  p.SubmitButtonText {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 11px 0;
+    color: var(--typography-light-gray);
+  }
+
+  .BottomContainer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    .Subtotal {
+      padding: 20px;
+      background: var(--body-background);
+
+      .TotalPriceContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          margin-top: 0;
+          margin-bottom: 10px;
+          color: var(--typography-dark-gray);
+        }
+      }
+
+      .PromoCode {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .Button {
+          button {
+            padding: 7px 13px;
+          }
+
+          p {
+            font-size: 16px;
+            color: var(--typography-purple);
+            margin: 9px 0;
+          }
+        }
+      }
+    }
+
+    .Total {
+      padding: 20px;
+      background: var(--typography-dark-gray);
+
+      .TotalPriceContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          margin-top: 0;
+          margin-bottom: 10px;
+          color: var(--typography-black);
+        }
+      }
+
+      .WithoutCard {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+
+        a {
+          color: var(--typography-black);
+        }
+      }
+
+      p.SubmitButtonText {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 11px 0;
+        color: var(--typography-light-gray);
+      }
+    }
+  }
+
+  .EventDescription {
+    padding: 20px;
+
+    p.Date {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.60;
+      margin: 0 0 20px 0;
+      color: var(--typography-light-gray);
+    }
+
+    .Info {
+      margin-top: 20px;
+
+      p {
+        font-size: 15px;
+        line-height: 1.67;
+        margin: 0 0 20px 0;
+        color: var(--typography-light-gray);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .EventPrices {
+    padding: 20px;
+
+    p {
+      font-size: 15px;
+      margin: 0 0 15px 0;
+      color: var(--typography-light-gray);
+
+      span:first-child {
+        font-weight: 700;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .EventTabs {
+    padding: 20px;
+
+    .TabPanelContainer {
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      .TabBody {
+        margin-top: 20px;
+
+        p {
+          font-size: 15px;
+          line-height: 1.67;
+          margin: 0 0 20px 0;
+          color: var(--typography-light-gray);
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .ChatTabs {
+    margin-top: 20px;
+    //margin-bottom: 60px;
+    padding-bottom: 60px;
+
+    .No-results {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 13px;
+      color: var(--typography-light-gray);
+    }
+
+    .SearchContainer, .TabListChat {
+      padding: 0 20px;
+    }
+
+    .ChatList {
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.67;
+      color: var(--typography-light-gray);
+    }
+
+    .TabBody {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px;
+    }
+  }
+
+  .HeaderCreateGroup {
+    text-align: center;
+    color: var(--typography-light-gray);
+    position: fixed;
+    background-color: var(--body-background);
+    height: 70px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    & > p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .CloseContainer {
+      position: absolute;
+      right: 35px;
+    }
+  }
+
+  .CreateGroup {
+    padding: 90px 20px 20px;
+    color: var(--typography-light-gray);
+
+    & > p {
+      font-size: 16px;
+      margin: 26px 0;
+    }
+
+    .UsersContainer {
+      overflow-y: scroll;
+      padding-bottom: 130px;
+    }
+
+    .ButtonContainer {
+      position: fixed;
+      background-color: var(--body-background);
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-top: 0;
+      padding: 35px 20px;
+
+      @include bp-min(500px) {
+        width: 100%;
+        //left: 50%;
+        //transform: translate(-50%, 0%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .Actions {
+          width: 460px;
+        }
+      }
+    }
+
+    .Actions {
+      p.SubmitButtonText {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: var(--typography-light-gray);
+      }
+    }
+  }
+
+  .ChatingContainer {
+    height: 100%;
+    overflow: hidden;
+    //overflow: hidden;
+
+    p {
+      color: var(--typography-light-gray);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .genderLtr {
+      margin-right: 5px;
+    }
+
+    .genderRtl {
+      margin-left: 5px;
+    }
+
+    .HeaderCreateGroup {
+      position: fixed;
+      background-color: var(--body-background);
+      height: 70px;
+      // width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border-bottom: 1px var(--divider-color) solid;
+
+      & > div:nth-child(2) {
+        display: flex;
+        align-items: center;
+      }
+
+      .rotateBack {
+        transform: rotate(180deg);
+      }
+
+      .BackContainer {
+        display: flex;
+        padding: 0 20px;
+      }
+
+      .GreyAvatar {
+        height: 40px;
+        width: 40px;
+        background: gray;
+        border-radius: 100px;
+      }
+
+      .ContentContainer {
+        margin: 0 10px;
+        font-family: var(--font-assistant);
+        font-weight: 700;
+
+        .NameContainer {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          & > div {
+            margin: 0 5px;
+          }
+        }
+
+        .AgeContainer {
+          display: flex;
+          flex-direction: row;
+
+          div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            & > div {
+              margin: 0 3px;
+            }
+          }
+        }
+      }
+    }
+
+    .MessagesList {
+      margin-top: 10px;
+      //margin-left: auto;
+      //margin-right: auto;
+      //margin: 0 20px;
+      height: 100%;
+      overflow: hidden;
+
+      .MessagesBotContainer {
+        height: calc(100% - 150px) !important;
+      }
+
+      p.MessageEmptyChat {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .MessagesContainer {
+        //height: 250px;
+        //height: calc(100vh - 200px);
+        height: calc(100% - 200px);
+        //border: 1px solid red;
+        //overflow-y: scroll;
+        //overflow: auto;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+
+    .DialogContainer {
+      //padding-top: 80px;
+      margin-top: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 140px;
+      direction: ltr !important;
+    }
+
+    .SendMessageContainer {
+      position: fixed;
+      min-height: 70px;
+      background-color: var(--body-background);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px 72px 20px;
+      //margin-bottom: 10px;
+      width: 100%;
+
+      form {
+        width: 100%;
+      }
+
+      p.ErrorText {
+        font-size: 14px;
+        margin-bottom: 10px;
+        color: var(--typography-error);
+      }
+
+      @include bp-min(500px) {
+        width: 500px;
+        display: flex;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .EventRegister {
+    padding: 20px 20px 100px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .PriceInfo {
+      p {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--typography-light-gray);
+      }
+    }
+
+    .Actions {
+      span.ButtonText {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--typography-light-gray);
+      }
+    }
+  }
+
+  .CreateBlogContainer {
+    padding: 20px;
+
+    .Header {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+
+      .HeaderTitle {
+        display: flex;
+        align-items: center;
+
+        p {
+          font-family: var(--font-heebo);
+          color: var(--typography-light-gray);
+          font-size: 18px;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+
+      .GoBack {
+        position: absolute;
+        right: 5px;
+        top: -2px;
+      }
+    }
+
+    .UsernameContainer {
+      p {
+        color: var(--typography-light-gray);
+        font-size: 16px;
+        margin: 0;
+        margin-top: 40px;
+
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .Actions {
+      margin: 20px 0;
+
+      p.ActionButtonText {
+        color: var(--banner-button-text);
+        font-family: var(--font-heebo);
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 9px 0;
+      }
+    }
+
+    .AboutText {
+      p {
+        color: var(--typography-light-gray);
+        font-size: 15px;
+        margin: 0;
+      }
+    }
+  }
+
+  .CreateForumContainer {
+    padding: 20px;
+
+    .Header {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+
+      .HeaderTitle {
+        display: flex;
+        align-items: center;
+
+        p {
+          font-family: var(--font-heebo);
+          color: var(--typography-light-gray);
+          font-size: 18px;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+
+      .GoBack {
+        position: absolute;
+        right: 5px;
+        top: -2px;
+      }
+    }
+
+    .UsernameContainer {
+      p {
+        color: var(--typography-light-gray);
+        font-size: 16px;
+        margin: 0;
+        margin-top: 40px;
+
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .Actions {
+      margin: 20px 0;
+
+      p.ActionButtonText {
+        color: var(--banner-button-text);
+        font-family: var(--font-heebo);
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 9px 0;
+      }
+    }
+
+    .AboutText {
+      p {
+        color: var(--typography-light-gray);
+        font-size: 15px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+.WhoAreYouScreen {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .GoBack {
+    padding-top: 23px;
+  }
+
+  .Logotype {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .Guide {
+    padding-top: 33px;
+    padding-bottom: 33px;
+
+    p {
+      font-size: 15px;
+      line-height: 1.73;
+      text-align: center;
+      color: var(--typography-light-gray);
+      margin: 0;
+    }
+  }
+
+  .Form {
+    .Header {
+      p {
+        font-size: 16px;
+        color: var(--typography-light-gray);
+        margin: 0;
+      }
+    }
+
+    .ProfileType {
+      padding-top: 16px;
+      padding-bottom: 20px;
+
+      .ProfileTypeContainer {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .ErrorContainer {
+        font-size: 14px;
+        margin: 8px 0 0 0;
+        color: var(--typography-error);
+      }
+    }
+
+    .Nickname {
+      padding-top: 44px;
+      padding-bottom: 30px;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .Age {
+      padding-bottom: 44px;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .Actions {
+      p.SubmitButtonText {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: var(--typography-light-gray);
+      }
+    }
+  }
+}
+
+.OTPMobileScreen {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .Close {
+    padding-top: 23px;
+  }
+
+  .Icon {
+    margin-bottom: 33px;
+    margin-top: 33px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Guide {
+    p {
+      font-size: 16px;
+      text-align: center;
+      color: var(--typography-light-gray);
+    }
+  }
+
+  .Form {
+    .PhoneNumber {
+      padding-top: 36px;
+    }
+
+    .CheckBox {
+      margin-top: 15px;
+    }
+
+    .Notifications {
+      margin-top: 10px;
+
+      p.SelectService {
+        font-size: 16px;
+        color: var(--typography-light-gray);
+        margin: 20px 0 10px;
+      }
+    }
+
+    .Actions {
+      margin-top: 29px;
+
+      p.SubmitButtonText {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: var(--typography-light-gray);
+      }
+    }
+  }
+}
+
+.OTPMobileCodeScreen {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .Close {
+    padding-top: 23px;
+  }
+
+  .Icon {
+    margin-bottom: 33px;
+    margin-top: 33px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Guide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: 16px;
+      text-align: center;
+      color: var(--typography-light-gray);
+      margin: 0;
+    }
+
+    a {
+      margin-top: 5px;
+      text-align: center;
+    }
+  }
+
+  .Form {
+    .OTPCode {
+      padding-top: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      label {
+        display: flex;
+        justify-content: center;
+      }
+
+      & > p {
+        font-size: 14px;
+        color: var(--error-text-color);
+      }
+    }
+
+    .Actions {
+      margin-top: 40px;
+
+      p.SubmitButtonText {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: var(--typography-light-gray);
+      }
+    }
+  }
+}
+
+.MainBlocked, .ReactModal__Body--open {
+  overflow: hidden !important;
+}
+
+.Main {
+  .Welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .TextError {
+      p {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.15;
+        color: var(--typography-error);
+      }
+    }
+
+    .Icon {
+      margin-top: 10px;
+    }
+
+    .Text {
+      h1 {
+        font-size: 40px;
+        font-weight: 100;
+        line-height: 1.15;
+        color: var(--typography-light-gray);
+        text-transform: uppercase;
+        max-width: 335px;
+        text-align: center;
+        margin: 0;
+      }
+    }
+  }
+
+  .UserAccountWrapper {
+    .User {
+      padding: 20px;
+
+      .About {
+        p {
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 1.39;
+          color: var(--typography-light-gray);
+          margin: 0;
+          text-align: center;
+        }
+      }
+
+      .Actions {
+        margin-top: 20px;
+
+        div {
+          margin-bottom: 12px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        p.ButtonNewAccount {
+          @include fullSizeButtonText('default');
+        }
+
+        p.ButtonHaveAccount {
+          @include fullSizeButtonText('outline');
+        }
+      }
+    }
+  }
+
+  .DescriptionContainer {
+    background: var(--user-account-wrapper-background);
+    padding: 20px;
+    margin-top: 35px;
+
+    div {
+      h2 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.39;
+        color: var(--typography-light-gray);
+      }
+
+      p {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.39;
+        color: var(--typography-dark-gray);
+      }
+
+      span {
+        color: var(--typography-purple);
+        text-decoration: underline;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .UserPreferences {
+    padding: 52px 20px 0 20px;
+
+    .Text {
+      p {
+        font-size: 23px;
+        font-weight: 300;
+        line-height: 1.17;
+        color: var(--typography-light-gray);
+        text-align: center;
+        margin: 0;
+      }
+    }
+
+    .Form {
+      margin-top: 20px;
+    }
+
+    .Actions {
+      margin-top: 20px;
+
+      div {
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      p.ButtonFindMatches {
+        @include fullSizeButtonText('default');
+      }
+
+      p.ButtonAboutParties {
+        @include fullSizeButtonText('outline');
+      }
+    }
+  }
+
+  .OtherSwingers {
+    padding: 48px 20px 0 20px;
+
+    .Text {
+      h1 {
+        font-size: 23px;
+        font-weight: 300;
+        line-height: 1.3;
+        color: var(--typography-light-gray);
+        text-align: center;
+        margin: 0;
+      }
+    }
+
+    .List {
+      margin-top: 20px;
+    }
+  }
+
+  .Banner {
+    padding: 69px 20px 0 20px;
+
+    p.BannerButtonText {
+      color: var(--banner-button-text);
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+      padding: 9px 0;
+    }
+
+  }
+
+  .UpcomingEvents {
+    padding: 60px 20px 0 20px;
+
+    .Header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .Icon {
+
+      }
+
+      .Text {
+        p {
+          margin: 0;
+          font-size: 23px;
+          font-weight: 300;
+          line-height: 1.3;
+          color: var(--typography-light-gray);
+          text-align: center;
+        }
+      }
+    }
+
+    .List {
+      margin-top: 35px;
+    }
+  }
+
+  .BecomeSwinger {
+    padding: 76px 20px 100px 20px;
+
+    .Header {
+      .Text {
+        h1 {
+          margin: 0;
+          font-size: 23px;
+          font-weight: 300;
+          line-height: 1.3;
+          color: var(--typography-light-gray);
+          text-align: center;
+        }
+      }
+    }
+
+    .Action {
+      margin-top: 30px;
+
+      p.ActionButtonText {
+        color: var(--banner-button-text);
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 9px 0;
+      }
+    }
+  }
+
+  .ProfileAdTabs {
+    padding: 20px 20px 80px 20px;
+
+    .NoItem {
+      width: 100%;
+
+      p {
+        margin: 0 auto;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.3;
+        color: var(--typography-dark-gray);
+        text-align: center;
+        width: 200px;
+      }
+    }
+
+    .TabPanelContainer {
+      margin-top: 20px;
+      margin-bottom: 120px;
+      width: 100%;
+
+      .Tab1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        //p.ButtonLoadMoreText {
+        //  color: var(--typography-purple);
+        //  font-size: 16px;
+        //  font-weight: 500;
+        //  margin: 0;
+        //  padding: 9px 60px;
+        //}
+
+        .MoreButton {
+          .ButtonLoadMoreText {
+            color: var(--typography-purple);
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0;
+            padding: 9px 60px;
+          }
+
+          button {
+            margin: 0 auto;
+          }
+        }
+
+      }
+    }
+  }
+}
+.Profile {
+  .OtherBlogs {
+    margin-top: 20px;
+  
+    .MoreButton {
+      .ButtonLoadMoreText {
+        color: var(--typography-purple);
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 9px 60px;
+      }
+  
+      button {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.ProfilePage {
+  margin-bottom: 128px;
+  padding-bottom: 1px;
+
+
+  .ProfileOptionsContainer {
+    padding: 16px 16px;
+  }
+
+  .Description {
+    font-size: 13px;
+    color: var(--typography-dark-gray);
+    margin: 0 20px;
+    margin-bottom: 7px;
+    word-break: break-word;
+    width: calc(90% - 10px);
+  }
+
+  .SuitsUs {
+    font-size: 13px;
+    color: var(--typography-pink);
+    margin: 0 20px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    word-break: break-word;
+    width: calc(90% - 10px);
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .Actions {
+    margin: 0 20px;
+
+    p.SubmitButtonText {
+      color: var(--typography-light-gray);
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+      padding: 10px 0;
+    }
+
+    .Error {
+      color: var(--error-text-color);
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0;
+      padding: 10px 0;
+    }
+  }
+}
+
+.BlogPage {
+  padding: 20px;
+  margin-bottom: 128px;
+
+  .ProfileInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    img {
+      height: 70px;
+      width: 70px;
+      border-radius: 100px;
+    }
+
+    .Nickname {
+      font-size: 15px;
+      color: var(--typography-light-gray);
+      margin-top: 7px;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+
+    .Age {
+      display: flex;
+      flex-direction: row;
+
+      font-size: 15px;
+      line-height: 1.46;
+      font-weight: 700;
+      color: var(--typography-light-gray);
+
+      .ManAge,
+      .WomanAge {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .Icon {
+          width: 18px;
+          height: 18px;
+
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .TitleBlogContainer {
+    margin-bottom: 10px;
+
+    .Title {
+      font-size: 15px;
+      color: var(--typography-light-gray);
+      margin-top: 7px;
+      font-weight: 700;
+      margin-bottom: 7px;
+      width: 200px;
+    }
+
+    .InfoBlog {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .More {
+        display: flex;
+        flex-direction: row;
+
+        span {
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--typography-purple);
+          margin: 0 5px;
+        }
+
+        .Comment, .Viewed {
+          display: flex;
+          flex-direction: row;
+
+          div {
+            margin-top: 2px;
+          }
+        }
+      }
+
+      .Date {
+        p {
+          margin: 0;
+          font-size: 12px;
+          color: var(--typography-light-black);
+        }
+      }
+    }
+  }
+
+  .ProfileOptionsContainer {
+    padding: 16px 16px;
+  }
+
+  .Description {
+    font-size: 15px;
+    color: var(--typography-dark-gray);
+    margin-bottom: 7px;
+    word-break: break-word;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .InputCommentContainer {
+    margin-bottom: 65px;
+  }
+
+  .OtherBlogs {
+    margin-top: 20px;
+
+    .MoreButton {
+      .ButtonLoadMoreText {
+        color: var(--typography-purple);
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 9px 60px;
+      }
+
+      button {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.ForumPage {
+  padding: 20px;
+  margin-bottom: 128px;
+
+  .ProfileInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    img {
+      height: 70px;
+      width: 70px;
+      border-radius: 100px;
+    }
+
+    .Nickname {
+      font-size: 15px;
+      color: var(--typography-light-gray);
+      margin-top: 7px;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+
+    .Age {
+      display: flex;
+      flex-direction: row;
+
+      font-size: 15px;
+      line-height: 1.46;
+      font-weight: 700;
+      color: var(--typography-light-gray);
+
+      .ManAge,
+      .WomanAge {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .Icon {
+          width: 18px;
+          height: 18px;
+
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .TitleBlogContainer {
+    margin-bottom: 10px;
+
+    .Title {
+      font-size: 15px;
+      color: var(--typography-light-gray);
+      margin-top: 7px;
+      font-weight: 700;
+      margin-bottom: 7px;
+      width: 200px;
+    }
+
+    .InfoBlog {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .More {
+        display: flex;
+        flex-direction: row;
+
+        span {
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--typography-purple);
+          margin: 0 5px;
+        }
+
+        .Comment, .Viewed {
+          display: flex;
+          flex-direction: row;
+
+          div {
+            margin-top: 2px;
+          }
+        }
+      }
+
+      .Date {
+        p {
+          margin: 0;
+          font-size: 12px;
+          color: var(--typography-light-black);
+        }
+      }
+    }
+  }
+
+  .ProfileOptionsContainer {
+    padding: 16px 16px;
+  }
+
+  .Description {
+    font-size: 15px;
+    color: var(--typography-dark-gray);
+    margin-bottom: 7px;
+    word-break: break-word;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .InputCommentContainer {
+    margin-bottom: 65px;
+  }
+
+  .OtherBlogs {
+    margin-top: 20px;
+
+    .MoreButton {
+      .ButtonLoadMoreText {
+        color: var(--typography-purple);
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 9px 60px;
+      }
+ 
+      button {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.ForceRegisterPopup {
+  position: fixed;
+  z-index: 1999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.RequestImagesPopup {
+  position: fixed;
+  z-index: 1999;
+  bottom: 40px;
+  width: 320px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 14px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(13%, #f9a1af), color-stop(42%, #b15ed4), color-stop(77%, #460fe1));
+  background: -webkit-linear-gradient(left, #f9a1af 13%, #b15ed4 42%, #460fe1 77%);
+  background: linear-gradient(to right, #f9a1af 13%, #b15ed4 42%, #460fe1 77%);
+  border-image-slice: 1;
+  height: auto;
+
+  .RequestImages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 4px;
+    padding: 20px 45px;
+    text-align: center;
+    border-radius: 10px;
+    background: var(--bottom-drawer-header);
+
+    .GoBack {
+      position: absolute;
+      top: 7px;
+      left: 5px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      font-family: var(--font-heebo);
+      color: var(--typography-black);
+    }
+
+    .Actions {
+      display: flex;
+      height: 34px;
+      margin-top: 15px;
+
+      button {
+        margin: 0 5px;
+      }
+
+      .AcceptButtonText {
+        font-size: 14px;
+        font-family: var(--font-heebo);
+        color: var(--typography-light-gray);
+        width: max-content;
+      }
+    }
+  }
+}
+
+.AuthSignInIndexPage {
+  margin: 0 20px;
+
+  .Close {
+    padding-top: 25px;
+  }
+
+  .Guide {
+    padding-top: 33px;
+    padding-bottom: 18px;
+
+    p {
+      font-size: 15px;
+      line-height: 1.73;
+      color: var(--typography-light-gray);
+      margin: 0;
+    }
+  }
+
+  .Logotype {
+    //margin-top: 78px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .ResetPasswordInfo {
+    margin-top: 80px;
+
+    p {
+      font-size: 16px;
+      line-height: 1.56;
+      text-align: center;
+      color: var(--typography-light-gray);
+    }
+  }
+
+  .ErrorContainer {
+    margin-bottom: 15px;
+
+    .Error {
+      font-size: 14px;
+      color: var(--error-text-color);
+    }
+  }
+
+  .ErrorContainerResetPW {
+    margin-bottom: 15px;
+
+    .Error {
+      font-size: 14px;
+      color: var(--error-text-color);
+      margin: 0;
+
+      a {
+        color: var(--typography-light-gray);
+      }
+    }
+  }
+
+  .LinkContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  .OTPCode {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .Button {
+    margin-top: 20px;
+
+    p.SubmitButtonText {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--typography-light-gray);
+      margin: 10px 0;
+    }
+  }
+
+  .Tabs {
+    //margin-top: 80px;
+    margin-top: 50px;
+
+    .TabPanelContainer {
+      padding: 20px 0;
+
+      .Input {
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+
+      .HelpActions {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .Item {
+          width: fit-content;
+
+          div {
+            margin-top: 1px;
+          }
+        }
+      }
+
+      .Help {
+        margin: 10px 0;
+
+        p {
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 1.5;
+          color: var(--typography-light-gray);
+          margin: 0;
+        }
+      }
+
+      .NewUser {
+        margin-top: 96px;
+
+        .WelcomeText {
+          p {
+            font-size: 16px;
+            margin: 0;
+            color: var(--typography-light-gray);
+            text-align: center;
+          }
+        }
+
+        .ButtonSignUp {
+          margin-top: 16px;
+
+          p.LinkButtonText {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--typography-light-gray);
+            margin: 6px 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ChatScreen {
+  .DrawerFilterScreen {
+    padding: 20px 20px 100px 20px;
+    overflow-x: hidden;
+
+    .Header {
+
+      .Container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        .Title {
+          display: flex;
+          flex-direction: row;
+
+          p {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--typography-light-gray);
+            margin: 0;
+          }
+        }
+
+        .Action {
+          button {
+            padding: 0 !important;
+          }
+
+          p.ActionButtonText {
+            font-size: 14px;
+            color: var(--typography-light-gray);
+            margin: 4px 8px;
+          }
+        }
+      }
+    }
+
+    .FilterList {
+      form {
+        .Input {
+          padding: 20px 0;
+        }
+
+        .InputSearchByNickname {
+          margin: 20px 0;
+        }
+
+        .AreaFilterContainer {
+          margin-top: 20px;
+          margin-bottom: 20px;
+
+          p.SectionTitle {
+            font-size: 16px;
+            color: var(--typography-dark-gray);
+            margin: 0 0 10px 0;
+          }
+
+          .AreaFilter {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+        }
+
+        .Age {
+          margin-top: 20px;
+          margin-bottom: 20px;
+
+          .FilterAge {
+            p {
+              font-size: 16px;
+              color: var(--typography-dark-gray);
+              margin: 0 0 10px 0;
+            }
+
+            p.ft {
+              margin: 0;
+            }
+
+            .Inputs {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+            }
+
+            &:not(:first-child) {
+              margin-top: 16px;
+            }
+          }
+        }
+
+        .Additional {
+
+          .AccordionContainer {
+            //background: #000;
+          }
+        }
+      }
+
+      .Action {
+        p.ActionButtonText {
+          font-size: 14px;
+          color: var(--typography-light-gray);
+          margin: 11px;
+        }
+      }
+    }
+  }
+}
+
+.SignUpPageContainer {
+  .Step1 {
+    margin: 0 20px;
+    padding-bottom: 1px;
+
+    @include SignUpProfileDefaults;
+
+    //.GoBack {
+    //  padding-top: 20px;
+    //}
+    //
+    //.WelcomeLogotype {
+    //  display: flex;
+    //  flex-direction: column;
+    //  align-items: center;
+    //
+    //  padding: 35px 0;
+    //
+    //  div {
+    //    &:first-child {
+    //      margin-bottom: 16px;
+    //    }
+    //  }
+    //}
+
+    .WelcomeMessage {
+      p {
+        font-size: 16px;
+        line-height: 1.56;
+        color: var(--typography-light-gray);
+        text-align: center;
+      }
+    }
+
+    .Sections {
+      .ProfileType {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .Age {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .InputColumn {
+          //max-width: calc(50% - 4px);
+          width: calc(50% - 4px);
+        }
+      }
+
+      .CoupleNickname {
+        margin-top: 10px;
+      }
+    }
+
+    .Actions {
+      p.SubmitButtonText {
+        color: var(--typography-light-gray);
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  .Step2 {
+    margin: 0 20px;
+    padding-bottom: 1px;
+
+    @include SignUpProfileDefaults;
+
+    //.GoBack {
+    //  padding-top: 20px;
+    //}
+    //
+    //.WelcomeLogotype {
+    //  display: flex;
+    //  flex-direction: column;
+    //  align-items: center;
+    //
+    //  padding: 35px 0;
+    //
+    //  div {
+    //    &:first-child {
+    //      margin-bottom: 16px;
+    //    }
+    //  }
+    //}
+
+    .Sections {
+      .Location, .Area {
+        p.ButtonOpenLocationDrawer {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+
+          margin: 0;
+          padding: 10px 0;
+
+          font-size: 16px;
+          color: var(--typography-dark-gray);
+        }
+      }
+
+      .Location {
+        margin-top: 10px;
+      }
+    }
+
+    .LocationDrawerContainer {
+      padding: 30px 20px;
+    }
+
+    .Actions {
+      p.SubmitButtonText {
+        color: var(--typography-light-gray);
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  .Step3 {
+    margin: 0 20px;
+    padding-bottom: 1px;
+
+    .GoBack {
+      padding-top: 20px;
+    }
+
+    .WelcomeLogotype {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 35px 0 20px 0;
+
+      div {
+        &:first-child {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    //div {
+    //  &:first-child {
+    //    margin-bottom: 16px;
+    //  }
+    //}
+  }
+
+  .LinkContainer {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin: 0 8px 0 4px;
+    }
+  }
+
+  .ModalCropTitle {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: var(--font-heebo);
+    color: var(--typography-light-gray);
+  }
+
+  .NoCropPhoto {
+    position: relative;
+    display: inline-block;
+    cursor: crosshair;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .ActionsContainer {
+    width: 100%;
+    background-color: var(--body-background);
+
+    // @include bp-min(500px) {
+    //   width: 500px;
+    //   // padding: 0 20px;
+    // }
+
+    .Input {
+      display: flex;
+      align-items: center;
+      height: 65px;
+    }
+
+    .DeleteContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 65px;
+
+      .DeleteImage {
+        padding: 0 16px;
+      }
+
+      p {
+        margin: 0;
+        font-size: 14px;
+        font-family: var(--font-heebo);
+        color: var(--typography-dark-gray);
+      }
+    }
+  }
+
+  .Sections {
+    .VerificateText {
+      font-size: 16px;
+      font-family: var(--font-heebo);
+      color: var(--typography-dark-gray);
+      width: 80%;
+    }
+
+    .UploadPhotoContainer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 20px -10px;
+
+      .ErrorContainer {
+        margin-top: 10px;
+
+        span {
+          font-size: 14px;
+          margin: 8px 0 0 0;
+          color: var(--typography-error);
+        }
+      }
+
+      .AddPhoto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 135px;
+        height: 126px;
+        margin: 7px 10px;
+        opacity: 0.6;
+        border-radius: 3px;
+        background: var(--input-text-background);
+      }
+
+      .PhotoContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 135px;
+        height: 126px;
+        margin: 7px 10px;
+        border-radius: 3px;
+        background: var(--input-text-background);
+        overflow: hidden;
+        position: relative;
+
+        .OptionsPhoto {
+          position: absolute;
+          bottom: 12px;
+          left: 6px;
+        }
+      }
+
+      .NoCropPhoto {
+        position: relative;
+        display: inline-block;
+        cursor: crosshair;
+        overflow: hidden;
+        max-width: 100%;
+      }
+
+      .ActionsContainer {
+        width: 100%;
+        background-color: var(--body-background);
+
+        // @include bp-min(500px) {
+        //   width: 500px;
+        //   padding: 0 20px;
+        // }
+
+        .Input {
+          display: flex;
+          align-items: center;
+          height: 65px;
+        }
+
+        .DeleteContainer {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          height: 65px;
+
+          .DeleteImage {
+            padding: 0 16px;
+          }
+
+          p {
+            margin: 0;
+            font-size: 14px;
+            font-family: var(--font-heebo);
+            color: var(--typography-dark-gray);
+          }
+        }
+      }
+
+      .MainPhotoText {
+        font-size: 12px;
+        margin: 0 10px;
+        font-family: var(--font-heebo);
+        color: var(--typography-dark-gray);
+      }
+    }
+
+    .UploadVerifyPhotoContainer {
+      align-items: center;
+
+      .RabbitVerify {
+        margin-right: 40px;
+      }
+    }
+
+    .ForbiddenList {
+      margin-top: 16px;
+
+      div {
+        display: flex;
+        align-items: center;
+        margin: 0 -5px;
+
+        div {
+          margin: 0 5px;
+        }
+
+        p {
+          font-size: 13px;
+          margin: 3px 0;
+          font-family: var(--font-heebo);
+          color: var(--typography-dark-gray);
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  .ModalCrop {
+    // @include bp-min(500px) {
+    //   width: 500px;
+    // }
+    .ImageEdit {
+      overflow: auto;
+      // @include bp-min(500px) {
+      //   padding: 0 20px;
+      // }
+    }
+    .GoBack {
+      padding: 20px 0;
+    }
+  }
+
+  .LocationDrawerContainer {
+    padding: 30px 20px;
+  }
+
+  .Actions {
+    margin-bottom: 60px;
+
+    p.SubmitButtonText {
+      color: var(--typography-light-gray);
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+      padding: 10px 0;
+    }
+  }
+
+  ///
+
+  .StepSuccess {
+    margin: 0 20px;
+
+    .GoBack {
+      padding-top: 20px;
+    }
+
+    .WelcomeLogotype {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 35px 0 40px 0;
+
+      div {
+        &:first-child {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    .SuccessRabbitContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 16px;
+        margin: 10px 0;
+        font-family: var(--font-heebo);
+        color: var(--typography-dark-gray);
+        text-align: center;
+      }
+
+      p:last-child {
+        margin-bottom: 30px;
+      }
+    }
+
+    .Actions {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+
+      .Button {
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
+      }
+
+      p.SubmitButtonText {
+        @include fullSizeButtonText('default');
+        margin: 0;
+      }
+
+      p.ButtonGoAuth {
+        @include fullSizeButtonText('outline');
+        margin: 6px 0;
+      }
+
+      p.SubmitButtonText, p.ButtonGoAuth {
+        //margin: 10px 0;
+      }
+    }
+  }
+
+  .Step3Profile {
+    margin: 0 20px;
+    padding-bottom: 1px;
+    @include SignUpProfileDefaults;
+    .Sections {
+      .Profile {
+
+        .ProfileBasic {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .InputColumn {
+            //max-width: calc(50% - 4px);
+            width: calc(50% - 4px);
+          }
+        }
+
+        .ProfileHeight {
+          margin-top: 10px;
+        }
+
+        .ProfileDetails {
+          margin-top: 20px;
+          .Error {
+            font-size: 14px;
+            margin: 8px 0 0 0;
+            color: var(--typography-error);
+          }
+        }
+      }
+    }
+
+    .Actions {
+      display: flex;
+      flex-direction: column;
+      //justify-content: center;
+      align-items: center;
+      padding-bottom: 20px;
+      margin: 0;
+
+      a {
+        margin-top: 10px;
+      }
+
+      p.SubmitButtonText {
+        font-size: 16px;
+        color: var(--typography-light-gray);
+        font-weight: 500;
+        margin: 0;
+        padding: 10px 0;
+      }
+    }
+
+    .DrawerContainer {
+      padding: 30px 20px;
+    }
+  }
+
+  .ErrorContainer {
+    p {
+      font-size: 14px;
+      margin: 0;
+      color: var(--typography-error);
+
+      &:first-child {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .Step5Profile {
+    margin: 0 20px;
+    @include SignUpProfileDefaults;
+
+    .Sections {
+      .SectionSuit {
+        margin-top: 20px;
+
+        .AccordionContainer {
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .Error {
+          font-size: 14px;
+          margin: 8px 0 0 0;
+          color: var(--typography-error);
+        }
+      }
+
+      .SectionOther {
+        margin-top: 20px;
+
+        .Title {
+          font-size: 16px;
+          color: var(--typography-light-gray);
+          margin: 0 0 15px 0;
+        }
+        .Error {
+          font-size: 14px;
+          margin: 8px 0 0 0;
+          color: var(--typography-error);
+        }
+      }
+
+      .SectionExperience {
+        margin-top: 20px;
+      }
+
+
+    }
+
+    .Actions {
+      display: flex;
+      flex-direction: column;
+      //justify-content: center;
+      align-items: center;
+
+      padding-bottom: 20px;
+      margin: 20px 0 0 0;
+
+      a {
+        margin-top: 10px;
+      }
+
+      p.SubmitButtonText {
+        font-size: 16px;
+        color: var(--typography-light-gray);
+        font-weight: 500;
+        margin: 0;
+        padding: 10px 0;
+      }
+    }
+
+    .DrawerContainer {
+      padding: 30px 20px;
+    }
+  }
+
+  .StepSelectProfile {
+    margin: 0 20px;
+
+    .GoBack {
+      padding-top: 20px;
+    }
+
+    .WelcomeLogotype {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 35px 0 40px 0;
+
+      div {
+        &:first-child {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    .SuccessRabbitContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 16px;
+        margin: 10px 0;
+        line-height: 1.56;
+        font-family: var(--font-heebo);
+        color: var(--typography-light-gray);
+        text-align: center;
+      }
+
+      //p:last-child {
+      //  margin-bottom: 30px;
+      //}
+    }
+
+    .Actions {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+
+      .Button {
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
+      }
+
+      p.SubmitButtonText {
+        @include fullSizeButtonText('default');
+        margin: 0;
+      }
+
+      .Info {
+        p {
+          font-size: 16px;
+          line-height: 1.56;
+          font-family: var(--font-heebo);
+          color: var(--typography-light-gray);
+          text-align: center;
+        }
+      }
+    }
+
+
+  }
+}
+
+.Step4 {
+  margin: 0 20px;
+  padding-bottom: 1px;
+
+  @include SignUpProfileDefaults;
+
+  //.GoBack {
+  //  padding-top: 20px;
+  //}
+  //
+  //.WelcomeLogotype {
+  //  display: flex;
+  //  flex-direction: column;
+  //  align-items: center;
+  //
+  //  padding: 35px 0 0 0;
+  //
+  //  div {
+  //    &:first-child {
+  //      margin-bottom: 16px;
+  //    }
+  //  }
+  //}
+
+  .UsernameSection {
+    p.Info {
+      font-size: 14px;
+      color: var(--typography-light-gray);
+      line-height: 1.5;
+      margin: 4px 0 0 0;
+      font-weight: 300;
+    }
+  }
+
+  .EmailPasswordSection {
+    display: flex;
+    flex-direction: column;
+
+    .Input {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      .Help {
+        margin: 10px 0;
+
+        p {
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 1.5;
+          color: var(--typography-light-gray);
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .PhoneSection {
+    p.Why {
+      font-size: 16px;
+      color: var(--typography-light-gray);
+      margin: 0 0 10px 0;
+      margin-top: 20px;
+    }
+
+    .Input {
+      //.Info {
+      //  margin: 10px 0;
+
+      p.Info {
+        font-size: 14px;
+        //font-weight: 300;
+        //line-height: 1.5;
+        color: var(--typography-light-gray);
+        margin: 10px 0 0 0;
+      }
+
+    }
+  }
+
+  .Notifications {
+    p.SelectService {
+      font-size: 16px;
+      color: var(--typography-light-gray);
+      margin: 20px 0 10px;
+    }
+  }
+
+  .OTPSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+
+    p.Where {
+      font-size: 16px;
+      color: var(--typography-light-gray);
+      margin: 0 0 10px 0;
+      text-align: center;
+    }
+
+    .Input {
+
+    }
+  }
+
+  .SendMeUpdates {
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    a {
+      color: var(--typography-light-gray);
+      font-size: 15px;
+    }
+  }
+
+  .Error {
+    font-size: 14px;
+    margin: 8px 0;
+    color: var(--typography-error);
+  }
+
+  .Actions {
+    p.SubmitButtonText {
+      font-size: 16px;
+      color: var(--typography-light-gray);
+      font-weight: 500;
+      margin: 0;
+      padding: 10px 0;
+    }
+  }
+}
+
+.SignUpAddPhonePageContainer {
+  .StepPhone {
+    margin: 0 20px;
+
+    .GoBack {
+      padding-top: 20px;
+    }
+
+    .WelcomeLogotype {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 35px 0 0 0;
+
+      div {
+        &:first-child {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    .PhoneSection {
+      p.Why {
+        font-size: 16px;
+        color: var(--typography-light-gray);
+        margin: 0 0 10px 0;
+      }
+
+      .Input {
+        //.Info {
+        //  margin: 10px 0;
+
+        p.Info {
+          font-size: 14px;
+          //font-weight: 300;
+          //line-height: 1.5;
+          color: var(--typography-light-gray);
+          margin: 10px 0 0 0;
+        }
+
+      }
+    }
+
+    .Actions {
+      display: flex;
+      flex-direction: column;
+      //justify-content: center;
+      align-items: center;
+
+      a {
+        margin-top: 10px;
+      }
+
+      p.SubmitButtonText {
+        font-size: 16px;
+        color: var(--typography-light-gray);
+        font-weight: 500;
+        margin: 0;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+.SignUpPhoneOTPContainer {
+  .StepOTPCode {
+    margin: 0 20px;
+
+    .GoBack {
+      padding-top: 20px;
+    }
+
+    .WelcomeLogotype {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 35px 0 0 0;
+
+      div {
+        &:first-child {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    .OTPSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p.Where {
+        font-size: 16px;
+        color: var(--typography-light-gray);
+        margin: 0 0 10px 0;
+      }
+
+      .Input {
+
+      }
+    }
+
+    .Actions {
+      display: flex;
+      flex-direction: column;
+      //justify-content: center;
+      align-items: center;
+
+      a {
+        margin-top: 10px;
+      }
+
+      p.SubmitButtonText {
+        font-size: 16px;
+        color: var(--typography-light-gray);
+        font-weight: 500;
+        margin: 0;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+
+.SwitchProfileContainer {
+  padding: 20px;
+}
+
+.SwiperProfileReg {
+  .swiper-slide {
+    text-align: center;
+
+    border: solid 1px rgba(255, 255, 255, 0);
+    width: 148px;
+    height: 60px !important;
+    border-radius: 3px;
+
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--typography-light-gray);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-active {
+      border: solid 1px #bebebe;
+    }
+  }
+}
+
+.SubscriptionDrawerContainer {
+  padding: 20px;
+
+  .PriceList {
+    margin-top: 20px;
+  }
+
+  .Unsubscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+  }
+}
+
+.AvailableAdPage {
+  padding: 20px;
+  padding-bottom: 150px;
+
+  .AvailableTodayCount {
+    display: flex;
+    //justify-content: space-around;
+    justify-content: space-between;
+
+    .Line {
+      height: auto;
+      width: 1px;
+      background-color: var(--typography-light-gray);
+    }
+
+    .Counter {
+      width: calc(50% - 4px - 0.5px);
+      text-align: center;
+
+      p {
+        font-size: 21px;
+        font-weight: 300;
+        color: var(--typography-light-gray);
+        font-family: var(--font-heebo);
+        margin: 0;
+
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .Actions {
+    margin: 20px 0;
+
+    button {
+      height: 60px;
+    }
+
+    p.ActionButtonText {
+      color: var(--banner-button-text);
+      font-family: var(--font-heebo);
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+      padding: 9px 0;
+    }
+  }
+
+  .EditActions {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    button {
+      height: 60px;
+    }
+
+    button:first-child {
+      width: calc(50% - 4px);
+    }
+
+    button:last-child {
+      width: calc(50% - 4px);
+    }
+
+    p.EditButtonText {
+      color: var(--typography-black);
+      font-family: var(--font-heebo);
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+      padding: 9px 0;
+    }
+  }
+
+  .ExceededLimit {
+    margin: 20px 0;
+    font-size: 14px;
+    color: var(--typography-error);
+  }
+}
+
+.Blogs {
+  .TitleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 0;
+
+    p {
+      font-family: var(--font-heebo);
+      color: var(--typography-light-gray);
+      font-size: 15px;
+      text-align: center;
+      margin: 5px 0;
+    }
+
+    .Title {
+      font-size: 20px;
+    }
+
+    .Actions {
+      width: 100%;
+      margin: 20px 0;
+
+      p.ActionButtonText {
+        color: var(--banner-button-text);
+        font-family: var(--font-heebo);
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 9px 0;
+      }
+    }
+
+    .SearchContainer {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+}
+
+.SignUpErrorMessage {
+  font-size: 14px;
+  margin: 8px 0 0 0;
+  color: var(--typography-error);
+}
+
+.NotificationManagerPage {
+  .Header {
+    padding: 0 20px;
+    position: relative;
+
+    .ArrowContainer {
+      transform: rotate(-90deg);
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      right: 20px;
+    }
+
+    p {
+      text-align: center;
+      color: var(--typography-light-gray);
+      font-family: var(--font-heebo);
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  .Title {
+    color: var(--typography-light-gray);
+    font-family: var(--font-heebo);
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+}
+
+.DrawerNotify {
+  padding: 20px;
+}
+
+.ReactModal__Overlay {
+  z-index: 1000;
+}
+
+.AvailableAdContainer {
+  .MoreButton {
+    .ButtonLoadMoreText {
+      color: var(--typography-purple);
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+      padding: 9px 60px;
+    }
+
+    button {
+      margin: 0 auto;
+    }
+  }
+}
+
+.Modal_Modal__3BPdU {
+  @include bp-min(500px) {
+    width: 500px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

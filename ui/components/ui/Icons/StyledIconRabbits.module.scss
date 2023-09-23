@@ -1,0 +1,15 @@
+.StyledIconRabbits {
+  --w: 90px;
+  --h: 95px;
+
+  display: inline-block;
+
+  width: var(--w);
+  height: var(--h);
+
+  background-image: url('assets/styledRabbit3.svg');
+  background-size: 90px;
+  //background-size: 70px 250px;
+  background-repeat: no-repeat;
+  //background-position: right 0 bottom -80px;
+}

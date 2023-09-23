@@ -1,0 +1,13 @@
+.ActiveStarIcon {
+  display: inline-block;
+  width: 22px;
+  height: 20px;
+
+  -webkit-mask-image: url(assets/activeStar.svg);
+  mask-image: url(assets/activeStar.svg);
+  background-color: var(--favorite-profile-star-active);
+
+  &:hover {
+    background-color: var(--hover-icon-color);
+  }
+}

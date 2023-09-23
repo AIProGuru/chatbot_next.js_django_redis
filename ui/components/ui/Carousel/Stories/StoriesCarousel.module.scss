@@ -1,0 +1,21 @@
+.StoriesCarousel {
+  overflow: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  display: flex;
+  flex-direction: row;
+
+  padding: 20px 0 0 20px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.rtl {
+  padding: 20px 20px 0 0;
+}

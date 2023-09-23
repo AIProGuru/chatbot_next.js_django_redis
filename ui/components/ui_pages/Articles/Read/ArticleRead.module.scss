@@ -1,0 +1,132 @@
+.ArticleRead {
+  //margin-bottom: 96px;
+  padding-bottom: 96px;
+
+  .Container {
+    padding: 20px;
+
+    .GoBack {
+      margin-bottom: 20px;
+    }
+
+    .Welcome {
+      h1 {
+        font-size: 20px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.15;
+        letter-spacing: normal;
+        text-align: center;
+        color: var(--typography-light-gray);
+        margin: 0;
+      }
+    }
+
+    .Content {
+      font-size: 15px !important;
+      color: var(--typography-light-gray) !important;
+
+      h1, h2, h3, p, span {
+        color: var(--typography-light-gray) !important;
+      }
+
+      h1 {
+        font-size: 24px !important;
+      }
+
+      h2 {
+        font-size: 20px !important;
+      }
+
+      h3 {
+        font-size: 18px !important;
+      }
+
+      p, span {
+        font-size: 15px !important;
+      }
+
+      a {
+        color: var(--button-primary-color) !important;
+        // background: var(--button-primary-color) !important;
+        padding: 0 4px !important;
+        border-radius: 4px !important;
+      }
+
+      ul, ol {
+        margin: 0 !important;
+        padding: 0 0 0 20px !important;
+        //padding: 0;
+
+        li {
+          font-size: 15px !important;
+          color: var(--typography-light-gray) !important;
+        }
+      }
+
+      pre {
+        width: 100% !important;
+        max-width: 100% !important;
+        word-break: break-word !important;
+        white-space: pre-line !important;
+        font-size: 13px !important;
+        color: var(--typography-dark-gray) !important;
+      }
+
+      //font-size: 15px;
+      //color: var(--typography-light-gray);
+
+      //p {
+      //  //font-size: 15px;
+      //  //color: var(--typography-light-gray);
+      //}
+
+      img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+
+        &[src=''], &[src='#'] {
+          display: none !important;
+        }
+      }
+    }
+
+    .Recommendations {
+      margin-top: 64px;
+
+      .Header {
+        .Text {
+          font-size: 19px;
+          font-weight: 500;
+          color: var(--typography-light-gray);
+        }
+      }
+
+      .List {
+
+      }
+
+      .Action {
+        .ActionButtonText {
+          font-size: 16px;
+          font-weight: 500;
+          text-align: center;
+          color: var(--typography-light-gray);
+          margin: 9px 0;
+        }
+      }
+    }
+  }
+}
+
+.rtl {
+  .Container {
+    .Content {
+      ul, ol {
+        padding: 0 20px 0 0;
+      }
+    }
+  }
+}

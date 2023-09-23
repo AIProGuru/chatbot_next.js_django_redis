@@ -1,0 +1,50 @@
+.Bubble {
+  background: var(--bubble-background-default);
+  //padding: 0.5px 0.5px;
+  padding: 1px 2px 3px 2px;
+  border-radius: 16px;
+  min-width: 25px;
+  text-align: center;
+
+  font-size: 13px;
+  font-family: var(--font-assistant);
+  font-weight: 600;
+  color: var(--typography-light-gray);
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+.Position {
+  &-left {
+    left: -12px;
+
+    &-rtl {
+      left: unset;
+      right: -12px;
+    }
+  }
+
+  &-right {
+    left: unset;
+    right: -20px;
+
+    &-rtl {
+      left: -20px;
+      right: unset;
+    }
+  }
+}
+
+.Variant {
+  &-clear {
+    background: unset;
+  }
+
+  //&-tab-bar {
+  //  top: 16px;
+  //  left: -10px;
+  //}
+}

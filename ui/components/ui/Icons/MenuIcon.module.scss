@@ -1,0 +1,13 @@
+.MenuIcon {
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+
+  -webkit-mask-image: url(assets/menu.svg);
+  mask-image: url(assets/menu.svg);
+  background-color: var(--default-icon-color);
+
+  &:hover {
+    background-color: var(--hover-icon-color);
+  }
+}

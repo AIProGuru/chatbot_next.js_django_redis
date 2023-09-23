@@ -1,0 +1,32 @@
+.AdminMessage {
+	background: var(--profile-ad-background);
+	border-radius: 3px;
+	// width: calc(100% - 40px);
+	width: 100%;
+	position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+
+	//&:not(:last-child) {
+	//	margin-bottom: 20px;
+	//}
+
+  .GoBack {
+    padding: 0 5px;
+  }
+
+  .Text {
+    width: 78%;
+    padding: 0 10px;
+    font-size: 14px;
+    color: var(--typography-dark-gray);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    word-break: break-word;
+    width: calc(90% - 10px);
+    p {
+      margin: 0;
+    }
+  }
+}

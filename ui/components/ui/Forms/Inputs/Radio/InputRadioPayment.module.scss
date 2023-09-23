@@ -1,0 +1,66 @@
+@import "styles/mixins";
+
+.InputRadioPayment {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border-bottom: 1px solid var(--radio-divider-background);
+  width: 100%;
+
+  // background: var(--radio-group-background);
+
+  &:first-child {
+    border-radius: 4px 4px 0 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    border-radius: 0 0 4px 4px;
+  }
+
+  label {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+  }
+
+  .Radio {
+    width: 100%;
+    padding: 13px 13px;
+    min-height:60px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .Input {
+      width: 11%;
+    }
+
+    .Text {
+      display: flex;
+      align-items: center;
+
+      p {
+        margin: 0 0 0 20px;
+      }
+
+      p.Title {
+        font-size: 16px;
+        line-height: 1.25;
+        color: var(--typography-dark-gray);
+      }
+
+      p.TitleActive {
+        font-weight: 700;
+        color: var(--typography-light-gray);
+      }
+    }
+  }
+
+  @include inputRadio;
+}
+
+.Active {
+  // background: var(--radio-group-active-background);
+}

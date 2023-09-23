@@ -1,0 +1,49 @@
+@import "styles/mixins";
+
+.Header {
+  width: 100%;
+  background: var(--body-background);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+
+  padding: 0 15px 0 15px; // 15x15 because buttons have padding (before was 21)
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.Filters {
+  width: 30%;
+}
+
+.Logotype {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--typography-light-gray);
+  }
+}
+
+.Actions {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+@include bp-min(500px) {
+  .Header {
+    width: 500px;
+  }
+}

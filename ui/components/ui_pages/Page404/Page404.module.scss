@@ -1,0 +1,41 @@
+.Page404 {
+  position: absolute;
+  inset: 0;
+
+  .Container {
+    height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .Icon {
+
+    }
+
+    .Info {
+      font-size: 18px;
+      line-height: 1.39;
+      color: var(--typography-light-gray);
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .Actions {
+      p.ButtonText {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--typography-light-gray);
+        margin: 7.5px 0;
+        min-width: 210px;
+        text-align: center;
+      }
+    }
+  }
+}

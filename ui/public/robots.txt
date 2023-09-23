@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://swingers.co.il/sitemap.xml
+

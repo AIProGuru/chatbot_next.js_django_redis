@@ -1,0 +1,300 @@
+.AvailableAd {
+  background: var(--profile-ad-background);
+  border-radius: 3px;
+  width: 100%;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .AvailableAdClickableArea {
+    text-decoration: none;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+
+    .Image {
+      width: 149px;
+      height: 141px;
+      position: relative;
+      padding: 20px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 3px;
+      }
+
+      .Dialog {
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        left: 53px;
+        bottom: 8px;
+      }
+    }
+
+    a.Info {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      width: calc(100% - 141px);
+      // margin-left: 16px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-right: 7px;
+
+      .Status {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        .Location {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .Icon {
+            width: 15px;
+            height: 15px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .Text {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            span {
+              font-size: 11px;
+              font-family: var(--font-assistant);
+              color: var(--typography-dark-gray);
+            }
+          }
+        }
+
+        .Network {
+          display: block;
+        }
+      }
+
+      .ProfileInfo {
+        display: flex;
+        flex-direction: column;
+
+        .Basic {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-top: 9px;
+
+          width: 100%;
+          flex-wrap: wrap;
+
+          font-size: 13px;
+          line-height: 1.46;
+          font-weight: 700;
+          color: var(--typography-light-gray);
+
+          .ProfileType {
+            margin-right: 4px;
+          }
+
+          .ManAge,
+          .WomanAge {
+            margin-right: 4px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .Icon {
+              width: 15px;
+              height: 15px;
+
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+
+          .Verified {
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        .Location {
+          font-size: 13px;
+          color: var(--typography-dark-gray);
+        }
+      }
+
+      .Description {
+        font-size: 13px;
+        color: var(--typography-dark-gray);
+        margin-bottom: 7px;
+        word-break: break-word;
+        width: calc(90% - 10px);
+      }
+
+      .SuitsUs {
+        font-size: 13px;
+        color: var(--typography-pink);
+        margin-top: 7px;
+        margin-bottom: 7px;
+        word-break: break-word;
+        width: calc(90% - 10px);
+
+        span {
+          font-weight: 700;
+        }
+      }
+
+      .DescriptionContainer {
+        .SubscriptionButton {
+          margin: 4px 0 8px 0;
+          width: 90%;
+
+          .SubscribeButtonText {
+            color: var(--typography-light-gray);
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .DeleteImage {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+  }
+}
+
+.rtl {
+  .DeleteImage {
+    position: absolute;
+    bottom: 0;
+    right: auto;
+    left: 0;
+    padding: 10px;
+  }
+
+  .AvailableAdClickableArea {
+    .Image {
+      img {
+        border-radius: 0 3px 3px 0;
+      }
+
+      .Dialog {
+        left: unset;
+        right: 53px;
+      }
+    }
+
+    .Info {
+      margin-left: unset;
+      padding-right: unset;
+      padding-left: 7px;
+
+      .ProfileInfo {
+        .Basic {
+          .ProfileInfo {
+            margin-right: unset;
+            margin-left: 4px;
+          }
+
+          .ManAge,
+          .WomanAge {
+            margin-right: unset;
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.RequestImages {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px;
+  background: var(--profile-ad-background);
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: -10px;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-image-source: linear-gradient(
+                  to right,
+                  #f9a1af 13%,
+                  #b15ed4 42%,
+                  #460fe1 77%
+  );
+  border-image-slice: 1;
+
+  p {
+    margin: 0;
+  }
+
+  .Buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+
+    .CancelButton {
+      width: 45%;
+
+      .WhiteButtonText {
+        font-size: 14px;
+        color: var(--typography-light-gray);
+        font-family: var(--font-heebo);
+      }
+    }
+
+    .AcceptButton {
+      width: 50%;
+
+      .SubmitButtonText {
+        color: var(--banner-button-text);
+        font-size: 14px;
+        font-weight: 500;
+        font-family: var(--font-heebo);
+      }
+    }
+  }
+
+  .Description {
+    width: 50%;
+
+    p {
+      font-size: 14px;
+      color: var(--typography-dark-gray);
+      font-family: var(--font-heebo);
+      font-weight: 500;
+    }
+  }
+}
+
+.ProfileModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--body-background);
+  z-index: 10000;
+  overflow-y: scroll;
+}

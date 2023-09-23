@@ -1,0 +1,48 @@
+.Section {
+  padding: 44px 0;
+
+  &:first-child {
+    padding-top: 29px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--divider-color);
+  }
+
+  .Title {
+    font-size: 16px;
+    line-height: 1.31;
+    color: var(--typography-light-gray);
+  }
+
+  .BoldTitle {
+    font-weight: 700;
+  }
+
+  .Description {
+    font-size: 14px;
+    line-height: 1.31;
+    color: var(--typography-light-gray);
+    margin-top: 5px;
+  }
+
+  .Content {
+    margin-top: 15px;
+  }
+
+  .NoTitle {
+    margin-top: 0;
+  }
+}
+
+.Padding {
+  &-small {
+    padding: 22px 0;
+  }
+}
+
+.Variant {
+  &-profile {
+    margin: 0 20px;
+  }
+}

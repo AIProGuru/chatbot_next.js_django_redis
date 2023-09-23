@@ -1,0 +1,115 @@
+.MenuContainer {
+  padding: 20px 0;
+
+  .MenuHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px 15px;
+
+    .ProfileInfo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+
+      p {
+        font-size: 16px;
+        color: var(--typography-light-gray);
+        font-family: var(--font-heebo);
+        //font-weight: 500;
+        margin: 0 0 0 10px;
+      }
+
+      .Avatar {
+        height: 40px;
+        width: 40px;
+        background: var(--nophoto-color);
+        border-radius: 100px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 90px;
+
+          &[src=''], &[src='#'] {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .LanguageContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      cursor: pointer;
+
+      .Icon {
+        width: 17px;
+        height: 17px;
+      }
+
+      .CurrentLang {
+        margin: 0 0 0 10px;
+
+        font-size: 16px;
+        color: var(--typography-light-gray);
+      }
+    }
+
+    .Action {
+      padding: 32px 0;
+      width: 100%;
+
+      .ButtonSignIn {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        margin: 0;
+        padding: 10px 0;
+
+        font-size: 16px;
+        color: var(--typography-dark-gray);
+      }
+    }
+  }
+
+  .ProgressContainer {
+    padding: 0 20px 30px;
+  }
+
+  .MenuList {
+    .Menu {
+      p {
+        font-size: 16px;
+        color: var(--typography-dark-gray);
+        font-family: var(--font-heebo);
+        font-weight: 500;
+        margin: 0;
+        padding: 22px 20px;
+      }
+    }
+  }
+}
+
+.rtl {
+  .MenuHeader {
+    .ProfileInfo {
+      p {
+        margin: 0 10px 0 0;
+      }
+    }
+
+    .LanguageContainer {
+      .CurrentLang {
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import 'styles/mixins';
+
+.TransparentButton {
+  @include buttonReset;
+  width: 32px;
+  height: 32px;
+  border-radius: 90px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Mode {
+  &-fit-content {
+    width: fit-content;
+    height: fit-content;
+  }
+}

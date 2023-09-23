@@ -1,0 +1,57 @@
+.SubscriptionsPage {
+
+  .Icon {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .Container {
+    padding: 20px;
+
+    .ChoosePlan {
+      width: 100%;
+      text-align: center;
+
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--typography-light-gray);
+    }
+
+    .SubscriptionsList {
+      margin-top: 20px;
+    }
+
+    .SubscriptionDescription {
+      font-size: 12px;
+      line-height: 1.58;
+      color: var(--typography-light-gray);
+      margin-top: 10px;
+    }
+
+    .PriceList {
+      margin-top: 30px;
+    }
+
+    .SubscriptionContactUsDescription {
+      margin: 20px 0;
+      text-align: center;
+      p {
+        margin: 0;
+      }
+    }
+
+    .Actions {
+      margin-top: 30px;
+      margin-bottom: 60px;
+
+      p.SubmitButtonText {
+        margin: 10px 0;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--typography-light-gray);
+      }
+    }
+  }
+}

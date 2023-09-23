@@ -1,0 +1,31 @@
+@import "styles/mixins";
+
+.TabBar {
+  width: 100%;
+  background: var(--body-background);
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.TabBarButtonGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px; // 30..
+  padding: 5px 0 10px 0;
+}
+
+@include bp-min(500px) {
+  .TabBar {
+    width: 500px !important;
+    //left: 50%;
+    //transform: translate(-50%, 0%);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

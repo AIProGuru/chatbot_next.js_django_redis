@@ -1,0 +1,227 @@
+.MessageWrapper {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.MessagesContainer {
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  //padding: 0 20px;
+  margin-bottom: 15px;
+  position: relative;
+
+  & > p {
+    color: var(--typography-dark-gray) !important;
+    font-size: 12px !important;
+  }
+
+  .genderLtr {
+    margin-right: 5px;
+  }
+
+  .genderRtl {
+    margin-left: 5px;
+  }
+
+  .MessageBox {
+    //background-color: var(--typography-dark-gray);
+    background-color: var(--chat-messages-default-background);
+    max-width: 70%;
+    width: max-content;
+    padding: 10px;
+    margin-bottom: 18px;
+    border-radius: 4px;
+    position: relative;
+    word-break: break-word;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      bottom: -9px;
+      border: 5px solid transparent;
+      //border-left: 5px solid var(--typography-dark-gray);
+      //border-top: 5px solid var(--typography-dark-gray);
+      border-left: 5px solid var(--chat-messages-default-background);
+      border-top: 5px solid var(--chat-messages-default-background);
+     }
+    p {
+      //color: var(--body-background);
+      color: var(--chat-messages-text-color);
+      font-size: 16px;
+      margin: 0;
+    }
+
+    strong {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.36;
+      color: var(--typography-black);
+    }
+
+    .Recommendations {
+      margin-top: 10px;
+      width: 100%;
+
+      p {
+        color: #ffffff;
+        margin: 0;
+        padding: 8px;
+      }
+    }
+  }
+
+  .MessageStatus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .Read {
+      width: 15px;
+      height: 15px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-right: 2px;
+    }
+
+    .Time {
+      font-size: 12px;
+      font-family: var(--font-heebo);
+      color: var(--typography-dark-gray);
+    }
+  }
+
+  .GreyAvatar {
+    height: 60px;
+    width: 60px;
+    background: var(--typography-dark-gray);
+    border-radius: 100px;
+  }
+
+
+  .PopUpOptions {
+    position: absolute;
+
+    z-index: 11000;
+    //right: 20px;
+    //top: calc(-50% - (77px / 2));
+    top: 90px;
+    //border-radius: 11px;
+    //margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    .List {
+
+      .Option {
+        padding: 20px;
+        background: var(--chat-options-background);
+
+        &:hover {
+          background: var(--chat-options-background-hover);
+        }
+
+        &:first-child {
+          border-radius: 11px 11px 0 0;
+        }
+
+        &:last-child {
+          border-radius: 0 0 11px 11px;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--body-background);
+        }
+
+        p {
+          color: var(--body-background) !important;
+        }
+      }
+
+    }
+  }
+}
+
+.MainMessageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  .MainMessageBox {
+    background-color: var(--chat-messages-author-background);
+    position: relative;
+    &::after {
+      display: none;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      right: 10px;
+      bottom: -9px;
+      border: 5px solid transparent;
+      border-right: 5px solid var(--typography-purple);
+      border-top: 5px solid var(--typography-purple);
+    }
+    p {
+      //color: var(--typography-light-gray);
+      color: var(--chat-messages-text-color);
+    }
+  }
+
+  .PopUpOptions {
+    //left: 20px;
+    //right: unset;
+  }
+}
+
+.PopUpBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: var(--chat-options-backdrop);
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.Show {
+  //background: rgba(blue, 10%);
+  z-index: 11000;
+}
+
+
+//
+//.PopupOptions {
+//  background: var(--typography-dark-gray);
+//  width: 150px;
+//  margin: 0 20px;
+//  border-radius: 10px;
+//  & > div {
+//    padding: 10px;
+//    border-bottom: 1px solid var(--body-background);
+//    & > p {
+//      color: var(--body-background) !important;
+//    }
+//  }
+//  & > div:last-child {
+//    border-bottom: 0;
+//  }
+//}
+//
+//.PopupBackground {
+//  position: absolute;
+//  height: 100%;
+//  width: 100%;
+//  background-color: black;
+//  opacity: 0.5;
+//  bottom: 0;
+//  z-index: 1002;
+//}
+////
+////.PopUpOptions {
+////  position: fixed;
+////}

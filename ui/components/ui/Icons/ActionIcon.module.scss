@@ -1,0 +1,52 @@
+@mixin circle() {
+  width: 4px;
+  height: 4px;
+  background: var(--action-icon-color-light);
+  border-radius: 90px;
+}
+
+.ActionIcon {
+  display: block;
+  @include circle;
+
+  position: absolute;
+  //top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    @include circle;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    @include circle;
+  }
+
+  &:hover {
+    background: var(--hover-icon-color) !important;
+
+    &:before, &:after {
+      background: var(--hover-icon-color) !important;
+    }
+  }
+}
+
+.Color {
+  &-dark {
+    background: var(--action-icon-color-dark);
+    &:before {
+      background: var(--action-icon-color-dark);
+    }
+  
+    &:after {
+      background: var(--action-icon-color-dark);
+    }
+  }
+}
+

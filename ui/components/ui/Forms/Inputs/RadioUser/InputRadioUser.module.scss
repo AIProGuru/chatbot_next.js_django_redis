@@ -1,0 +1,140 @@
+@import "styles/mixins";
+
+.InputRadioUser {
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  //width: 100%;
+  //border-radius: 5px;
+  //background: var(--radio-group-background);
+  border-bottom: 1px solid var(--divider-color);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  label {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    outline: none;
+
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid var(--checkbox-border-color);
+    border-radius: 3px;
+
+    transition: 0.2s;
+
+    &:checked {
+      border: 1px solid var(--switch-input-background);
+      background-image: url("../../../Icons/assets/tick.svg");
+      background-repeat: no-repeat;
+      background-origin: border-box;
+    }
+  }
+
+  .Radio {
+    width: 100%;
+    padding: 12px 0; //12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .Input {
+      margin-top: 8px;
+    }
+  }
+
+  .genderLtr {
+    margin-right: 5px;
+  }
+
+  .genderRtl {
+    margin-left: 5px;
+  }
+
+  .LeftSide {
+    display: flex;
+    padding: 20px 0;
+
+    & > div:first-child {
+      display: flex;
+      align-items: center;
+      margin: 0 20px;
+    }
+
+    .ContentContainer {
+      margin: 0 15px;
+      font-family: var(--font-assistant);
+      font-weight: 700;
+
+      .NameContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        & > div {
+          margin: 0 5px;
+        }
+      }
+
+      .AgeContainer {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+
+        div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          & > div {
+            margin: 0 3px;
+          }
+        }
+      }
+    }
+  }
+
+  p {
+    color: var(--typography-light-gray);
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .GreyAvatar {
+    height: 60px;
+    width: 60px;
+    background: gray;
+    border-radius: 100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100px;
+
+      &[src=''] {
+        display: none;
+      }
+    }
+  }
+}
+
+.Active {
+  background: var(--radio-group-active-background);
+}

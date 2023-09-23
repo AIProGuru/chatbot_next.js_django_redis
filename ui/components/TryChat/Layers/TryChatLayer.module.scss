@@ -1,0 +1,13 @@
+.TryChatLayer {
+  height: 100%;
+
+  .TryChatContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: stretch;
+    height: 100%;
+  }
+}

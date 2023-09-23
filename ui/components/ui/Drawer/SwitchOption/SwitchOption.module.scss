@@ -1,0 +1,39 @@
+.SwitchOption {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 20px 8px;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--divider-color);
+  }
+
+  .Icon {
+    width: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Title {
+    margin-left: 14px;
+    font-size: 14px;
+    color: var(--typography-light-gray);
+    font-family: var(--font-heebo);
+  }
+}
+
+.rtl {
+  .Title {
+    margin-left: unset;
+    margin-right: 14px;
+  }
+}
+
+.Disabled {
+  opacity: .5;
+  cursor: default;
+}

@@ -1,0 +1,46 @@
+.Logotype {
+  width: 118px;
+  height: 26px;
+  background: url('assets/logotype.svg');
+  background-size: 118px 26px;
+  //margin: 15px 0;
+}
+
+.Size {
+  &-header, &-small {
+    $w: 118px;
+    $h: 26px;
+    width: $w;
+    height: $h;
+    background-size: $w $h;
+  }
+
+  &-signup, &-medium {
+    $w: 140px;
+    $h: 32px;
+    width: $w;
+    height: $h;
+    background-size: $w $h;
+  }
+
+  &-signin, &-medium-2 {
+    $w: 166px;
+    $h: 37px;
+    width: $w;
+    height: $h;
+    background-size: $w $h;
+  }
+
+  &-splash &-big {
+    $w: 216px;
+    $h: 48px;
+    width: $w;
+    height: $h;
+    background-size: $w $h;
+  }
+}
+
+// 118 x 26 (header)
+// 140 x 32 (sign up fill profile)
+// 166 x 37 (sign in/up)
+// 216 x 48 (splash)

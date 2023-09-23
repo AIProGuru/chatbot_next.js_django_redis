@@ -1,0 +1,41 @@
+.InProgressContainer {
+  margin-top: 6px;
+  //width: max-content;
+  width: 100%;
+
+  .InProgressBarContainer {
+    display: flex;
+    align-items: center;
+    span {
+      font-size: 14px;
+      font-family: var(--font-heebo);
+      color: var(--in-progress-bar-count-text);
+    }
+    .SpanLeft {
+      margin-right: 5px;
+    }
+    .SpanRight {
+      margin-left: 5px;
+    }
+    .InProgressBar {
+      border-radius: 6px;
+      background-color: #242334;
+      height: 9px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      .InProgressBarActive {
+        border-radius: 6px;
+        background-image: linear-gradient(to right, #f9a1af, #b15ed4 62%, #460fe1 135%);
+        height: 9px;
+      }
+    }
+  }
+
+  p {
+    font-size: 13px;
+    font-family: var(--font-heebo);
+    color: var(--typography-light-gray);
+    margin-top: 6px;
+  }
+}

@@ -1,0 +1,23 @@
+@import "styles/mixins";
+
+.MessageItem {
+  width: 100%;
+  //margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+
+  &-author {
+    align-items: flex-end;
+  }
+}
+
+
+
+
+
+//@include bp-min(500px) {
+//  .MessageItem {
+//    max-width: 500px;
+//    width: 500px;
+//  }
+//}

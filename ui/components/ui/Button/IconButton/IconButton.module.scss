@@ -1,0 +1,93 @@
+.IconButtonContainer {
+  position: relative;
+
+  .IconButton {
+    //margin: 0;
+    padding: 0;
+    background: unset;
+    appearance: none;
+    outline: none;
+    border-radius: 0;
+    border: unset;
+
+    width: 32px;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: var(--button-transition-time);
+
+    //margin: 0 31px 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:hover {
+      div {
+        background-color: var(--hover-icon-color);
+      }
+    }
+  }
+}
+
+
+.ltr {
+  .IconButtonContainer {
+    .IconButton {
+      margin: 0 16px 0 0; // 31 by design, but 26 with all paddings
+    }
+  }
+}
+
+.rtl {
+  .IconButtonContainer {
+    .IconButton {
+      margin: 0 0 0 16px;
+    }
+  }
+}
+
+//.Placement {
+//  &-header {
+//    border: 1px solid red;
+//    margin-left: 16px;
+//
+//    &:first-child {
+//      margin-left: 0;
+//    }
+//  }
+//}
+//
+//.PlacementDir {
+//  &-rtl {
+//
+//  }
+//}
+
+.Placement {
+  &-rtl {
+    &-header {
+      //border: 1px solid red;
+      margin-right: 16px;
+
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &-ltr {
+    &-header {
+      //border: 1px solid red;
+      margin-left: 16px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
